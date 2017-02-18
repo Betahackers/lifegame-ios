@@ -27,7 +27,7 @@
 		63BD39181E58A6250036F7ED /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C213D8EEDE2C968ACECCD65B /* Pods-lifegame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lifegame.release.xcconfig"; path = "Pods/Target Support Files/Pods-lifegame/Pods-lifegame.release.xcconfig"; sourceTree = "<group>"; };
 		E9ACDA69B6EF6D7E0CD47048 /* Pods_lifegame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lifegame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EACC31861E586A2900B5CB89 /* lifegame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lifegame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EACC31861E586A2900B5CB89 /* Balance It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACC31891E586A2900B5CB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifegameViewController.swift; sourceTree = "<group>"; };
 		EACC318E1E586A2900B5CB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Lifegame.storyboard; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		EACC31871E586A2900B5CB89 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EACC31861E586A2900B5CB89 /* lifegame.app */,
+				EACC31861E586A2900B5CB89 /* Balance It.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,7 +192,7 @@
 			);
 			name = lifegame;
 			productName = lifegame;
-			productReference = EACC31861E586A2900B5CB89 /* lifegame.app */;
+			productReference = EACC31861E586A2900B5CB89 /* Balance It.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -429,7 +429,7 @@
 				INFOPLIST_FILE = lifegame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.gorillaarm.balanceit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Balance It";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -443,7 +443,7 @@
 				INFOPLIST_FILE = lifegame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.gorillaarm.balanceit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Balance It";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
