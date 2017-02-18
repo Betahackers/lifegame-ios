@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LifeGameViewController: UIViewController {
 
     var prop1 = 0
     var prop2 = 0

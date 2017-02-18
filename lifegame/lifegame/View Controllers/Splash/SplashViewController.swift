@@ -20,6 +20,7 @@ class SplashViewController: UIViewController {
     }
 
     private func showTutorial() {
-        
+        let vc = LifeGameViewController() //change this to your class name
+        self.present(vc, animated: true, completion: nil)
     }
 }
