@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC31891E586A2900B5CB89 /* AppDelegate.swift */; };
+		EACC318C1E586A2900B5CB89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC318B1E586A2900B5CB89 /* ViewController.swift */; };
+		EACC318F1E586A2900B5CB89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC318D1E586A2900B5CB89 /* Main.storyboard */; };
+		EACC31911E586A2900B5CB89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACC31901E586A2900B5CB89 /* Assets.xcassets */; };
+		EACC31941E586A2900B5CB89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC31921E586A2900B5CB89 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EACC31861E586A2900B5CB89 /* lifegame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lifegame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EACC31891E586A2900B5CB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EACC318B1E586A2900B5CB89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EACC318E1E586A2900B5CB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EACC31901E586A2900B5CB89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EACC31931E586A2900B5CB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EACC31951E586A2900B5CB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EACC31831E586A2900B5CB89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EACC317D1E586A2900B5CB89 = {
+			isa = PBXGroup;
+			children = (
+				EACC31881E586A2900B5CB89 /* lifegame */,
+				EACC31871E586A2900B5CB89 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EACC31871E586A2900B5CB89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EACC31861E586A2900B5CB89 /* lifegame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EACC31881E586A2900B5CB89 /* lifegame */ = {
+			isa = PBXGroup;
+			children = (
+				EACC31891E586A2900B5CB89 /* AppDelegate.swift */,
+				EACC318B1E586A2900B5CB89 /* ViewController.swift */,
+				EACC318D1E586A2900B5CB89 /* Main.storyboard */,
+				EACC319B1E586A4300B5CB89 /* Assets */,
+			);
+			path = lifegame;
+			sourceTree = "<group>";
+		};
+		EACC319B1E586A4300B5CB89 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EACC31901E586A2900B5CB89 /* Assets.xcassets */,
+				EACC31921E586A2900B5CB89 /* LaunchScreen.storyboard */,
+				EACC31951E586A2900B5CB89 /* Info.plist */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EACC31851E586A2900B5CB89 /* lifegame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EACC31981E586A2900B5CB89 /* Build configuration list for PBXNativeTarget "lifegame" */;
+			buildPhases = (
+				EACC31821E586A2900B5CB89 /* Sources */,
+				EACC31831E586A2900B5CB89 /* Frameworks */,
+				EACC31841E586A2900B5CB89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lifegame;
+			productName = lifegame;
+			productReference = EACC31861E586A2900B5CB89 /* lifegame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EACC317E1E586A2900B5CB89 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Marek Pivovarnik";
+				TargetAttributes = {
+					EACC31851E586A2900B5CB89 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y8YQK72M2R;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EACC31811E586A2900B5CB89 /* Build configuration list for PBXProject "lifegame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EACC317D1E586A2900B5CB89;
+			productRefGroup = EACC31871E586A2900B5CB89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EACC31851E586A2900B5CB89 /* lifegame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EACC31841E586A2900B5CB89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EACC31941E586A2900B5CB89 /* LaunchScreen.storyboard in Resources */,
+				EACC31911E586A2900B5CB89 /* Assets.xcassets in Resources */,
+				EACC318F1E586A2900B5CB89 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EACC31821E586A2900B5CB89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EACC318C1E586A2900B5CB89 /* ViewController.swift in Sources */,
+				EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EACC318D1E586A2900B5CB89 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EACC318E1E586A2900B5CB89 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EACC31921E586A2900B5CB89 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EACC31931E586A2900B5CB89 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EACC31961E586A2900B5CB89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EACC31971E586A2900B5CB89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EACC31991E586A2900B5CB89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y8YQK72M2R;
+				INFOPLIST_FILE = lifegame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.betachallenge.lifegame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EACC319A1E586A2900B5CB89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y8YQK72M2R;
+				INFOPLIST_FILE = lifegame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.betachallenge.lifegame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EACC31811E586A2900B5CB89 /* Build configuration list for PBXProject "lifegame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EACC31961E586A2900B5CB89 /* Debug */,
+				EACC31971E586A2900B5CB89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EACC31981E586A2900B5CB89 /* Build configuration list for PBXNativeTarget "lifegame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EACC31991E586A2900B5CB89 /* Debug */,
+				EACC319A1E586A2900B5CB89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EACC317E1E586A2900B5CB89 /* Project object */;
+}
