@@ -10,15 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, Consumer {
 
-    // MARK: - implementation of consumer protocol
-    
-    func update(lifePorperties: LifeProperty, value: Int) {
-        
-    }
-    
-    func update(cardList: [Card]) {
-        
-    }
+    var prop1 = 0
+    var prop2 = 0
+    var prop3 = 0
+    var prop4 = 0
     
 }
 

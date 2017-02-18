@@ -13,7 +13,6 @@
 		EACC318F1E586A2900B5CB89 /* Lifegame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */; };
 		EACC31911E586A2900B5CB89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACC31901E586A2900B5CB89 /* Assets.xcassets */; };
 		EACC31941E586A2900B5CB89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC31921E586A2900B5CB89 /* LaunchScreen.storyboard */; };
-		EAF55BF71E587A03002F454B /* LifePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF55BF61E587A03002F454B /* LifePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		EACC31901E586A2900B5CB89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EACC31931E586A2900B5CB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EACC31951E586A2900B5CB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAF55BF61E587A03002F454B /* LifePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 			children = (
 				EACC31891E586A2900B5CB89 /* AppDelegate.swift */,
 				EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */,
-				EAF55BF61E587A03002F454B /* LifePresenter.swift */,
 				EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */,
 				EACC319B1E586A4300B5CB89 /* Assets */,
 			);
@@ -233,7 +230,6 @@
 			files = (
 				EACC318C1E586A2900B5CB89 /* LifegameViewController.swift in Sources */,
 				EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */,
-				EAF55BF71E587A03002F454B /* LifePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
