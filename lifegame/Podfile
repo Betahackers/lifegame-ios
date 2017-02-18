@@ -1,0 +1,4 @@
+target ‘lifegame’ do
+	use_frameworks!
+    pod 'Alamofire', '~> 4.3'
+end

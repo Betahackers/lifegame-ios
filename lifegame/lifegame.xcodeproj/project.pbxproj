@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32818CB9CC879519DDF46D82 /* Pods_lifegame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9ACDA69B6EF6D7E0CD47048 /* Pods_lifegame.framework */; };
 		EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC31891E586A2900B5CB89 /* AppDelegate.swift */; };
-		EACC318C1E586A2900B5CB89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC318B1E586A2900B5CB89 /* ViewController.swift */; };
-		EACC318F1E586A2900B5CB89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC318D1E586A2900B5CB89 /* Main.storyboard */; };
+		EACC318C1E586A2900B5CB89 /* LifegameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */; };
+		EACC318F1E586A2900B5CB89 /* Lifegame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */; };
 		EACC31911E586A2900B5CB89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACC31901E586A2900B5CB89 /* Assets.xcassets */; };
 		EACC31941E586A2900B5CB89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC31921E586A2900B5CB89 /* LaunchScreen.storyboard */; };
+		EAF55BF71E587A03002F454B /* LifePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF55BF61E587A03002F454B /* LifePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1863113A304BEAF5654E9847 /* Pods-lifegame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lifegame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lifegame/Pods-lifegame.debug.xcconfig"; sourceTree = "<group>"; };
+		C213D8EEDE2C968ACECCD65B /* Pods-lifegame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lifegame.release.xcconfig"; path = "Pods/Target Support Files/Pods-lifegame/Pods-lifegame.release.xcconfig"; sourceTree = "<group>"; };
+		E9ACDA69B6EF6D7E0CD47048 /* Pods_lifegame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lifegame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACC31861E586A2900B5CB89 /* lifegame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lifegame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACC31891E586A2900B5CB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EACC318B1E586A2900B5CB89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EACC318E1E586A2900B5CB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifegameViewController.swift; sourceTree = "<group>"; };
+		EACC318E1E586A2900B5CB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Lifegame.storyboard; sourceTree = "<group>"; };
 		EACC31901E586A2900B5CB89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EACC31931E586A2900B5CB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EACC31951E586A2900B5CB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAF55BF61E587A03002F454B /* LifePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32818CB9CC879519DDF46D82 /* Pods_lifegame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DF73AB05541128B381E0A9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1863113A304BEAF5654E9847 /* Pods-lifegame.debug.xcconfig */,
+				C213D8EEDE2C968ACECCD65B /* Pods-lifegame.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		91D8A7E4369430D9AF225B51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9ACDA69B6EF6D7E0CD47048 /* Pods_lifegame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EACC317D1E586A2900B5CB89 = {
 			isa = PBXGroup;
 			children = (
+				EAF55BF81E5894EB002F454B /* New Group */,
 				EACC31881E586A2900B5CB89 /* lifegame */,
 				EACC31871E586A2900B5CB89 /* Products */,
+				3DF73AB05541128B381E0A9B /* Pods */,
+				91D8A7E4369430D9AF225B51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,8 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				EACC31891E586A2900B5CB89 /* AppDelegate.swift */,
-				EACC318B1E586A2900B5CB89 /* ViewController.swift */,
-				EACC318D1E586A2900B5CB89 /* Main.storyboard */,
+				EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */,
+				EAF55BF61E587A03002F454B /* LifePresenter.swift */,
+				EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */,
 				EACC319B1E586A4300B5CB89 /* Assets */,
 			);
 			path = lifegame;
@@ -72,6 +100,13 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		EAF55BF81E5894EB002F454B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EACC31981E586A2900B5CB89 /* Build configuration list for PBXNativeTarget "lifegame" */;
 			buildPhases = (
+				3BFF99E18A6CA97050CBA50E /* [CP] Check Pods Manifest.lock */,
 				EACC31821E586A2900B5CB89 /* Sources */,
 				EACC31831E586A2900B5CB89 /* Frameworks */,
 				EACC31841E586A2900B5CB89 /* Resources */,
+				A20590635269CEE9667E086A /* [CP] Embed Pods Frameworks */,
+				E6A9DE8E16DF5FACBA48DB7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,31 +172,80 @@
 			files = (
 				EACC31941E586A2900B5CB89 /* LaunchScreen.storyboard in Resources */,
 				EACC31911E586A2900B5CB89 /* Assets.xcassets in Resources */,
-				EACC318F1E586A2900B5CB89 /* Main.storyboard in Resources */,
+				EACC318F1E586A2900B5CB89 /* Lifegame.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BFF99E18A6CA97050CBA50E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A20590635269CEE9667E086A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lifegame/Pods-lifegame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6A9DE8E16DF5FACBA48DB7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lifegame/Pods-lifegame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EACC31821E586A2900B5CB89 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EACC318C1E586A2900B5CB89 /* ViewController.swift in Sources */,
+				EACC318C1E586A2900B5CB89 /* LifegameViewController.swift in Sources */,
 				EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */,
+				EAF55BF71E587A03002F454B /* LifePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EACC318D1E586A2900B5CB89 /* Main.storyboard */ = {
+		EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EACC318E1E586A2900B5CB89 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Lifegame.storyboard;
 			sourceTree = "<group>";
 		};
 		EACC31921E586A2900B5CB89 /* LaunchScreen.storyboard */ = {
@@ -265,6 +352,7 @@
 		};
 		EACC31991E586A2900B5CB89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1863113A304BEAF5654E9847 /* Pods-lifegame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y8YQK72M2R;
@@ -278,6 +366,7 @@
 		};
 		EACC319A1E586A2900B5CB89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C213D8EEDE2C968ACECCD65B /* Pods-lifegame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y8YQK72M2R;
@@ -308,6 +397,7 @@
 				EACC319A1E586A2900B5CB89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
