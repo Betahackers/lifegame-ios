@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Alamofire
 
 class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        DataManager.shared.loadDeck { (success) in
+            print("done")
+        }
         
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [weak self] _ in
                 self?.showTutorial()
