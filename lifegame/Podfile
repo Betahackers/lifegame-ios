@@ -2,6 +2,7 @@ target ‘lifegame’ do
 	use_frameworks!
     pod 'Alamofire', '~> 4.3'
     pod 'RealmSwift'
+    pod 'Koloda', '~> 4.0'
 end
 
 post_install do |installer|

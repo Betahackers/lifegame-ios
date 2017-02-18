@@ -15,40 +15,46 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sHy-wl-BDH">
-                    <rect key="frame" x="87" y="233.5" width="200" height="200"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BetaChallengeTestImage" translatesAutoresizingMaskIntoConstraints="NO" id="rU7-dK-MzJ">
+                    <rect key="frame" x="20" y="133" width="335" height="400"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="200" id="pAE-0D-ltl"/>
-                        <constraint firstAttribute="height" constant="200" id="z5L-VW-CCV"/>
+                        <constraint firstAttribute="height" constant="400" id="yyu-uh-Uzv"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGJ-Jr-4Ij">
-                    <rect key="frame" x="173" y="204" width="29" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylV-BP-BhF">
-                    <rect key="frame" x="158" y="323" width="59" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rxy-4v-Ma1">
+                    <rect key="frame" x="20" y="133" width="335" height="400"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdY-6y-6ns">
+                            <rect key="frame" x="146" y="190" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="hdY-6y-6ns" firstAttribute="centerY" secondItem="Rxy-4v-Ma1" secondAttribute="centerY" id="1GZ-Sg-seJ"/>
+                        <constraint firstItem="hdY-6y-6ns" firstAttribute="centerX" secondItem="Rxy-4v-Ma1" secondAttribute="centerX" id="uhc-Oh-jIV"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="sHy-wl-BDH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6qr-Xm-kLm"/>
-                <constraint firstItem="sHy-wl-BDH" firstAttribute="top" secondItem="DGJ-Jr-4Ij" secondAttribute="bottom" constant="8" symbolic="YES" id="G1o-Kn-VdN"/>
-                <constraint firstItem="ylV-BP-BhF" firstAttribute="centerX" secondItem="sHy-wl-BDH" secondAttribute="centerX" id="VrR-2o-TJA"/>
-                <constraint firstItem="DGJ-Jr-4Ij" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Vvu-Nk-WqP"/>
-                <constraint firstItem="ylV-BP-BhF" firstAttribute="centerY" secondItem="sHy-wl-BDH" secondAttribute="centerY" id="lTK-i0-smu"/>
-                <constraint firstItem="sHy-wl-BDH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pSt-q0-7E6"/>
+                <constraint firstItem="Rxy-4v-Ma1" firstAttribute="bottom" secondItem="rU7-dK-MzJ" secondAttribute="bottom" id="0N3-ay-4ko"/>
+                <constraint firstItem="Rxy-4v-Ma1" firstAttribute="trailing" secondItem="rU7-dK-MzJ" secondAttribute="trailing" id="3pe-nD-fjN"/>
+                <constraint firstAttribute="trailing" secondItem="rU7-dK-MzJ" secondAttribute="trailing" constant="20" id="4x2-yM-HxY"/>
+                <constraint firstItem="Rxy-4v-Ma1" firstAttribute="top" secondItem="rU7-dK-MzJ" secondAttribute="top" id="GHK-0f-N1E"/>
+                <constraint firstItem="rU7-dK-MzJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Nzn-CS-Xyt"/>
+                <constraint firstItem="Rxy-4v-Ma1" firstAttribute="leading" secondItem="rU7-dK-MzJ" secondAttribute="leading" id="Pap-hu-t2A"/>
+                <constraint firstItem="rU7-dK-MzJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="irs-Qd-LIU"/>
             </constraints>
             <connections>
-                <outlet property="cardImageView" destination="sHy-wl-BDH" id="Pcf-xJ-qE0"/>
-                <outlet property="questionLabel" destination="DGJ-Jr-4Ij" id="Vaf-Zr-11W"/>
+                <outlet property="shaderView" destination="Rxy-4v-Ma1" id="eAe-XR-XGg"/>
+                <outlet property="sharedLabel" destination="hdY-6y-6ns" id="g5p-fE-Gu6"/>
             </connections>
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="BetaChallengeTestImage" width="356" height="356"/>
+    </resources>
 </document>

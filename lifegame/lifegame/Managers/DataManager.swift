@@ -13,18 +13,23 @@ class DataManager {
     
     static let shared: DataManager = DataManager()
     
-    func saveDeckOfCards(completionHandler: ((Bool) -> Void)?) {
+    
+    
+    func saveDeckOfCards(completionHandler: (([Card]?) -> Void)?) {
         if let realm = try? Realm() {
+            var deckOfCards = [Card]()
             for index in (0..<10) {
                 let card = Card()
                 card.question = "\(index)"
                 card.identifier = index
                 try? realm.write {
                     realm.add(card, update: true)
+                    deckOfCards.append(card)
                 }
             }
+            arc4random_uniform(4)
             if completionHandler != nil {
-                completionHandler!(true)
+                completionHandler!(deckOfCards)
             }
         }
     }
@@ -40,6 +45,4 @@ class DataManager {
     //                }
     //            }
     //        }
-    
-    
 }

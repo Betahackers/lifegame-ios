@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-px-538">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-px-538" customClass="KolodaView" customModule="Koloda">
                                 <rect key="frame" x="87" y="233" width="200" height="200"/>
                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -68,23 +68,18 @@
                                     <constraint firstAttribute="height" constant="60" id="5rW-lq-eqG"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7F-OO-CZ9">
-                                <rect key="frame" x="166" y="140" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="u7F-OO-CZ9" firstAttribute="top" secondItem="63y-2G-JNL" secondAttribute="bottom" constant="60" id="Eti-hx-IKd"/>
                             <constraint firstItem="vw3-px-538" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cA4-QV-EO6"/>
                             <constraint firstItem="vw3-px-538" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dt1-Q6-o2v"/>
                             <constraint firstItem="63y-2G-JNL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qiK-pN-VC2"/>
-                            <constraint firstItem="u7F-OO-CZ9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t2S-6S-ZlU"/>
                             <constraint firstItem="63y-2G-JNL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xS0-ni-uEi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="kolodaView" destination="vw3-px-538" id="L43-Rh-sHA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

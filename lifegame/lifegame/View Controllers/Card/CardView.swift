@@ -9,8 +9,8 @@
 import UIKit
 
 class CardView: UIView {
-
-    @IBOutlet weak var cardImageView: UIImageView!
-    @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet weak var shaderView: UIView!
+    @IBOutlet weak var sharedLabel: UILabel!
     
 }
