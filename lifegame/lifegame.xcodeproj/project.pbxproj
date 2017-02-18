@@ -13,6 +13,10 @@
 		EACC318F1E586A2900B5CB89 /* Lifegame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */; };
 		EACC31911E586A2900B5CB89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACC31901E586A2900B5CB89 /* Assets.xcassets */; };
 		EACC31941E586A2900B5CB89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC31921E586A2900B5CB89 /* LaunchScreen.storyboard */; };
+		EAF55BFF1E589BA4002F454B /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF55BFE1E589BA4002F454B /* CardView.xib */; };
+		EAF55C011E589C3B002F454B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF55C001E589C3B002F454B /* CardView.swift */; };
+		EAF55C041E589DA2002F454B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF55C031E589DA2002F454B /* Card.swift */; };
+		EAF55C061E58A0B4002F454B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF55C051E58A0B4002F454B /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		EACC31901E586A2900B5CB89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EACC31931E586A2900B5CB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EACC31951E586A2900B5CB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAF55BFE1E589BA4002F454B /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = "View Controllers/Card/CardView.xib"; sourceTree = "<group>"; };
+		EAF55C001E589C3B002F454B /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = "View Controllers/Card/CardView.swift"; sourceTree = "<group>"; };
+		EAF55C031E589DA2002F454B /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = Model/Card.swift; sourceTree = "<group>"; };
+		EAF55C051E58A0B4002F454B /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = lifegame/Managers/DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +68,6 @@
 		EACC317D1E586A2900B5CB89 = {
 			isa = PBXGroup;
 			children = (
-				EAF55BF81E5894EB002F454B /* New Group */,
 				EACC31881E586A2900B5CB89 /* lifegame */,
 				EACC31871E586A2900B5CB89 /* Products */,
 				3DF73AB05541128B381E0A9B /* Pods */,
@@ -79,10 +86,11 @@
 		EACC31881E586A2900B5CB89 /* lifegame */ = {
 			isa = PBXGroup;
 			children = (
-				EACC31891E586A2900B5CB89 /* AppDelegate.swift */,
-				EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */,
-				EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */,
+				EAF55C021E589D87002F454B /* Model */,
 				EACC319B1E586A4300B5CB89 /* Assets */,
+				EAF55BF91E5899B7002F454B /* App Configuration */,
+				EAF55BF81E5894EB002F454B /* Managers */,
+				EAF55BFA1E5899BC002F454B /* View Controllers */,
 			);
 			path = lifegame;
 			sourceTree = "<group>";
@@ -92,16 +100,61 @@
 			children = (
 				EACC31901E586A2900B5CB89 /* Assets.xcassets */,
 				EACC31921E586A2900B5CB89 /* LaunchScreen.storyboard */,
-				EACC31951E586A2900B5CB89 /* Info.plist */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		EAF55BF81E5894EB002F454B /* New Group */ = {
+		EAF55BF81E5894EB002F454B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				EAF55C051E58A0B4002F454B /* DataManager.swift */,
 			);
-			name = "New Group";
+			name = Managers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		EAF55BF91E5899B7002F454B /* App Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				EACC31891E586A2900B5CB89 /* AppDelegate.swift */,
+				EACC31951E586A2900B5CB89 /* Info.plist */,
+			);
+			name = "App Configuration";
+			sourceTree = "<group>";
+		};
+		EAF55BFA1E5899BC002F454B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EAF55BFC1E589B69002F454B /* Card */,
+				EAF55BFD1E589B78002F454B /* Lifegame */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EAF55BFC1E589B69002F454B /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				EAF55BFE1E589BA4002F454B /* CardView.xib */,
+				EAF55C001E589C3B002F454B /* CardView.swift */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		EAF55BFD1E589B78002F454B /* Lifegame */ = {
+			isa = PBXGroup;
+			children = (
+				EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */,
+				EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */,
+			);
+			name = Lifegame;
+			sourceTree = "<group>";
+		};
+		EAF55C021E589D87002F454B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EAF55C031E589DA2002F454B /* Card.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +222,7 @@
 			files = (
 				EACC31941E586A2900B5CB89 /* LaunchScreen.storyboard in Resources */,
 				EACC31911E586A2900B5CB89 /* Assets.xcassets in Resources */,
+				EAF55BFF1E589BA4002F454B /* CardView.xib in Resources */,
 				EACC318F1E586A2900B5CB89 /* Lifegame.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,7 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EACC318C1E586A2900B5CB89 /* LifegameViewController.swift in Sources */,
+				EAF55C061E58A0B4002F454B /* DataManager.swift in Sources */,
+				EAF55C011E589C3B002F454B /* CardView.swift in Sources */,
 				EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */,
+				EAF55C041E589DA2002F454B /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

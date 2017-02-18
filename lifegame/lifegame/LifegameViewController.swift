@@ -8,27 +8,28 @@
 
 import UIKit
 
-class ViewController: UIViewController, Consumer {
+class ViewController: UIViewController {
 
     var prop1 = 0
     var prop2 = 0
     var prop3 = 0
     var prop4 = 0
     
-}
-
-protocol Consumer {
-    func update(lifePorperties: LifeProperty, value: Int)
-    func update(cardList: [Card])
-}
-
-enum LifeProperty {
-    case money
-    case family
-    case health
-}
-
-class Card {
+    var deckOfCards = [Card]()
+    
+    func fetchCards(completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(true)
+    }
+    
+    func loadDeck() {
+        for (index, card) in deckOfCards.enumerated() {
+            let views = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)
+            if let view = views?.first as? CardView {
+                view.cardImageView.image = UIImage() // CardImage
+                view.questionLabel.text = "\(index)"
+            }
+        }
+    }
     
 }
 

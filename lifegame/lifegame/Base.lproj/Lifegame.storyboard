@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,20 +21,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-px-538">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-px-538">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="vw3-px-538" secondAttribute="height" multiplier="1:1" id="IYS-8U-F58"/>
+                                    <constraint firstAttribute="height" constant="200" id="qCz-kb-UOk"/>
+                                    <constraint firstAttribute="width" constant="200" id="udj-cJ-gq3"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="63y-2G-JNL">
+                                <rect key="frame" x="37.5" y="20" width="300" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vu3-q0-0xx">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Szl-TS-Sx9"/>
+                                            <constraint firstAttribute="width" constant="60" id="XMv-Vs-6we"/>
+                                            <constraint firstAttribute="height" constant="60" id="eD9-9X-jjO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RQ0-Vd-i5l">
+                                        <rect key="frame" x="80" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="CzL-9M-iGo"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Ee4-3C-OYU"/>
+                                            <constraint firstAttribute="width" constant="60" id="iHm-rf-I7A"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gYU-bS-GAo">
+                                        <rect key="frame" x="160" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="BeA-5D-K9p"/>
+                                            <constraint firstAttribute="height" constant="60" id="Sdw-c3-LHI"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8XN-Ve-iBT">
+                                        <rect key="frame" x="240" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="0qG-u3-P7K"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="GzR-5q-BHP"/>
+                                            <constraint firstAttribute="height" constant="60" id="Rm2-Xd-ciO"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5rW-lq-eqG"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7F-OO-CZ9">
+                                <rect key="frame" x="166" y="140" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vw3-px-538" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WVb-YN-sam"/>
-                            <constraint firstItem="vw3-px-538" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="YUk-kw-A8e"/>
-                            <constraint firstItem="vw3-px-538" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bGv-EO-SnW"/>
-                            <constraint firstAttribute="trailing" secondItem="vw3-px-538" secondAttribute="trailing" constant="40" id="xjv-3o-ndN"/>
+                            <constraint firstItem="u7F-OO-CZ9" firstAttribute="top" secondItem="63y-2G-JNL" secondAttribute="bottom" constant="60" id="Eti-hx-IKd"/>
+                            <constraint firstItem="vw3-px-538" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cA4-QV-EO6"/>
+                            <constraint firstItem="vw3-px-538" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dt1-Q6-o2v"/>
+                            <constraint firstItem="63y-2G-JNL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qiK-pN-VC2"/>
+                            <constraint firstItem="u7F-OO-CZ9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t2S-6S-ZlU"/>
+                            <constraint firstItem="63y-2G-JNL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xS0-ni-uEi"/>
                         </constraints>
                     </view>
                 </viewController>
