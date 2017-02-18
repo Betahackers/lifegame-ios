@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EACC31851E586A2900B5CB89"
-               BuildableName = "lifegame.app"
+               BuildableName = "Balance It.app"
                BlueprintName = "lifegame"
                ReferencedContainer = "container:lifegame.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EACC31851E586A2900B5CB89"
-            BuildableName = "lifegame.app"
+            BuildableName = "Balance It.app"
             BlueprintName = "lifegame"
             ReferencedContainer = "container:lifegame.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EACC31851E586A2900B5CB89"
-            BuildableName = "lifegame.app"
+            BuildableName = "Balance It.app"
             BlueprintName = "lifegame"
             ReferencedContainer = "container:lifegame.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EACC31851E586A2900B5CB89"
-            BuildableName = "lifegame.app"
+            BuildableName = "Balance It.app"
             BlueprintName = "lifegame"
             ReferencedContainer = "container:lifegame.xcodeproj">
          </BuildableReference>

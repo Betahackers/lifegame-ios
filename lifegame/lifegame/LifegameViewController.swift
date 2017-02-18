@@ -9,7 +9,7 @@
 import UIKit
 import Koloda
 
-class ViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSource {
+class LifeGameViewController: UIViewController, KolodaViewDataSource, KolodaViewDelegate {
 
     // MARK: - Outlets
     

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		32818CB9CC879519DDF46D82 /* Pods_lifegame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9ACDA69B6EF6D7E0CD47048 /* Pods_lifegame.framework */; };
+		63BD39191E58A6250036F7ED /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BD39171E58A6250036F7ED /* Splash.storyboard */; };
+		63BD391A1E58A6250036F7ED /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD39181E58A6250036F7ED /* SplashViewController.swift */; };
 		EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC31891E586A2900B5CB89 /* AppDelegate.swift */; };
 		EACC318C1E586A2900B5CB89 /* LifegameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */; };
 		EACC318F1E586A2900B5CB89 /* Lifegame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */; };
@@ -21,9 +23,11 @@
 
 /* Begin PBXFileReference section */
 		1863113A304BEAF5654E9847 /* Pods-lifegame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lifegame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lifegame/Pods-lifegame.debug.xcconfig"; sourceTree = "<group>"; };
+		63BD39171E58A6250036F7ED /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		63BD39181E58A6250036F7ED /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C213D8EEDE2C968ACECCD65B /* Pods-lifegame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lifegame.release.xcconfig"; path = "Pods/Target Support Files/Pods-lifegame/Pods-lifegame.release.xcconfig"; sourceTree = "<group>"; };
 		E9ACDA69B6EF6D7E0CD47048 /* Pods_lifegame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lifegame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EACC31861E586A2900B5CB89 /* lifegame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lifegame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EACC31861E586A2900B5CB89 /* Balance It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACC31891E586A2900B5CB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifegameViewController.swift; sourceTree = "<group>"; };
 		EACC318E1E586A2900B5CB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Lifegame.storyboard; sourceTree = "<group>"; };
@@ -57,6 +61,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		63BD39161E58A6250036F7ED /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				63BD39171E58A6250036F7ED /* Splash.storyboard */,
+				63BD39181E58A6250036F7ED /* SplashViewController.swift */,
+			);
+			name = Splash;
+			path = "View Controllers/Splash";
+			sourceTree = "<group>";
+		};
 		91D8A7E4369430D9AF225B51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +92,7 @@
 		EACC31871E586A2900B5CB89 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EACC31861E586A2900B5CB89 /* lifegame.app */,
+				EACC31861E586A2900B5CB89 /* Balance It.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +139,7 @@
 		EAF55BFA1E5899BC002F454B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				63BD39161E58A6250036F7ED /* Splash */,
 				EAF55BFC1E589B69002F454B /* Card */,
 				EAF55BFD1E589B78002F454B /* Lifegame */,
 			);
@@ -177,7 +192,7 @@
 			);
 			name = lifegame;
 			productName = lifegame;
-			productReference = EACC31861E586A2900B5CB89 /* lifegame.app */;
+			productReference = EACC31861E586A2900B5CB89 /* Balance It.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -223,6 +238,7 @@
 				EACC31941E586A2900B5CB89 /* LaunchScreen.storyboard in Resources */,
 				EACC31911E586A2900B5CB89 /* Assets.xcassets in Resources */,
 				EAF55BFF1E589BA4002F454B /* CardView.xib in Resources */,
+				63BD39191E58A6250036F7ED /* Splash.storyboard in Resources */,
 				EACC318F1E586A2900B5CB89 /* Lifegame.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,7 +258,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A20590635269CEE9667E086A /* [CP] Embed Pods Frameworks */ = {
@@ -285,6 +301,7 @@
 				EACC318C1E586A2900B5CB89 /* LifegameViewController.swift in Sources */,
 				EAF55C061E58A0B4002F454B /* DataManager.swift in Sources */,
 				EAF55C011E589C3B002F454B /* CardView.swift in Sources */,
+				63BD391A1E58A6250036F7ED /* SplashViewController.swift in Sources */,
 				EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */,
 				EAF55C041E589DA2002F454B /* Card.swift in Sources */,
 			);
@@ -411,8 +428,8 @@
 				DEVELOPMENT_TEAM = Y8YQK72M2R;
 				INFOPLIST_FILE = lifegame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.betachallenge.lifegame;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.gorillaarm.balanceit;
+				PRODUCT_NAME = "Balance It";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -425,8 +442,8 @@
 				DEVELOPMENT_TEAM = Y8YQK72M2R;
 				INFOPLIST_FILE = lifegame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.betachallenge.lifegame;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.gorillaarm.balanceit;
+				PRODUCT_NAME = "Balance It";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
