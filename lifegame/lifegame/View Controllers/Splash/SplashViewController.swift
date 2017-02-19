@@ -11,20 +11,41 @@ import Alamofire
 
 class SplashViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    private let dataManager = DataManager.shared
+    
+    var shouldDismissSplash = [ false, false ] {
+        didSet {
+            if shouldDismissSplash.reduce(true, { $0 && $1 }) {
+                showTutorial()
+            }
+        }
+    }
+    
+    // MARK: View controller life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DataManager.shared.loadDeck { (success) in
+        dataManager.saveDeck { [weak self] (success) in
             print("done")
+            self?.shouldDismissSplash[0] = true
         }
         
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [weak self] _ in
-                self?.showTutorial()
+            self?.shouldDismissSplash[1] = true
+//            self?.spinner.startAnimating()
+//            self?.spinner.isHidden = false
         }
     }
 
+    // MARK: - Helper functions
+    
     private func showTutorial() {
-        let vc = LifeGameViewController() //change this to your class name
-        self.present(vc, animated: true, completion: nil)
+        let lifegameStoryboard = UIStoryboard(name: "Lifegame", bundle: nil)
+        let lifegameViewController = lifegameStoryboard.instantiateViewController(withIdentifier: "LifegameViewController") as! LifegameViewController
+        
+        lifegameViewController.makeRootViewControllerWithTransitionDuration(0.3)
     }
 }

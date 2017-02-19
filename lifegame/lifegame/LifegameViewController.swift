@@ -9,79 +9,112 @@
 import UIKit
 import Koloda
 
-class LifeGameViewController: UIViewController, KolodaViewDataSource, KolodaViewDelegate {
+class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaViewDelegate {
 
     // MARK: - Outlets
     
-    var prop1 = 0
-    var prop2 = 0
-    var prop3 = 0
-    var prop4 = 0
+    @IBOutlet weak var yearOfLifeLabel: UILabel!
     
-    @IBOutlet weak var kolodaView: KolodaView!
+    @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet weak var kolodaView: KolodaView! {
+        didSet {
+            kolodaView.dataSource = self
+            kolodaView.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var prop1IndicatorView: UIView!
+    @IBOutlet weak var prop2IndicatorView: UIView!
+    @IBOutlet weak var prop3IndicatorView: UIView!
+    @IBOutlet weak var prop4IndicatorView: UIView!
     
     // MARK: - Properties
     
+    // life properties
+    
+    var loveScore = Constant.defaultScore {
+        didSet {
+            if Double(loveScore) > Constant.maximumScore {
+                showGameOverScreen(withCauseOfDeath: .tooMuchLove)
+            } else if Double(loveScore) < Constant.minimumScore {
+                showGameOverScreen(withCauseOfDeath: .tooLessLove)
+            } else {
+                prop1IndicatorView.frame = determinePropIndicatorViewFrame(withScore: loveScore, forView: prop1IndicatorView)
+            }
+        }
+    }
+    var funScore = Constant.defaultScore {
+        didSet {
+            if Double(funScore) > Constant.maximumScore {
+                showGameOverScreen(withCauseOfDeath: .tooMuchFun)
+            } else if Double(funScore) < Constant.minimumScore {
+                showGameOverScreen(withCauseOfDeath: .tooLessFun)
+            } else {
+                prop2IndicatorView.frame = determinePropIndicatorViewFrame(withScore: funScore, forView: prop2IndicatorView)
+            }
+        }
+    }
+    var healthScore = Constant.defaultScore {
+        didSet {
+            if Double(healthScore) > Constant.maximumScore {
+                showGameOverScreen(withCauseOfDeath: .tooMuchHealth)
+            } else if Double(healthScore) < Constant.minimumScore {
+                showGameOverScreen(withCauseOfDeath: .tooLessHealth)
+            } else {
+                prop3IndicatorView.frame = determinePropIndicatorViewFrame(withScore: healthScore, forView: prop3IndicatorView)
+            }
+        }
+    }
+    var moneyScore = Constant.defaultScore {
+        didSet {
+            if Double(moneyScore) > Constant.maximumScore {
+                showGameOverScreen(withCauseOfDeath: .tooMuchMoney)
+            } else if Double(healthScore) < Constant.minimumScore {
+                showGameOverScreen(withCauseOfDeath: .tooLessMoney)
+            } else {
+                prop4IndicatorView.frame = determinePropIndicatorViewFrame(withScore: moneyScore, forView: prop4IndicatorView)
+            }
+        }
+    }
+    
+    var yearOfLife = 21 {
+        didSet {
+            yearOfLifeLabel.text = "\(yearOfLife)"
+        }
+    }
+    
+    // Managers
+    
     private let dataManger = DataManager.shared
     
-    var deckOfCards = [Card]()
+    // Model
     
+    var deckOfCards = [RLMCard]()
     var deckOfCardViews = [CardView]()
-    
-    func fetchCards(completionHandler: @escaping (Bool) -> Void) {
-        completionHandler(true)
-    }
-    
-    
-    func loadDeck() {
-//        for card in deckOfCards {
-//            let views = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)
-//            if let cardView = views?.first as? CardView {
-//                cardView.cardImageView.image = UIImage() // CardImage
-//                let colorIndex = Int(arc4random_uniform(6))
-////                cardView.cardImageView.backgroundColor = randomColors[colorIndex]
-////                cardView.questionLabel.text = card.question
-//                
-////                
-//        cardView.addGestureRecognizer(swipeRight)
-//
-//                view.addSubview(cardView)
-//            }
-//        }
-    }
     
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
-//        dataManger.saveDeckOfCards { [weak self] (cards) in
-//            if let deck = cards {
-//                self?.deckOfCards = deck
-//                self?.kolodaView.reloadData()
-//                self?.loadDeck()
-//            }
-//        }
-        for index in (0..<10) {
-            if let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView {
-                cardView.shaderView.backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 1)
-                cardView.sharedLabel.text = "\(index)"
-//                let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(pan(_:)))
-//                cardView.addGestureRecognizer(gestureRecognizer)
-                deckOfCardViews.append(cardView)
-            }
+        dataManger.loadDeck { [weak self] (cardDeck) in
             
-        }
-        kolodaView.dataSource = self
-        kolodaView.delegate = self
-    }
-    
-    func pan(_ gesture: UITapGestureRecognizer) {
-        switch  gesture.state {
-        case .began:
-            print("BEGAN!!!")
-        case .ended:
-            print("ENDED!!!")
-        default:
-            break
+            self?.deckOfCards = cardDeck
+            
+            for index in (0..<cardDeck.count) {
+                if let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView {
+                    
+                    cardView.characterImageView.image = UIImage(named: cardDeck[index].person)
+                    
+                    if cardDeck[index].answers.count == 2 {
+                        cardView.leftAnswerLabel.text = cardDeck[index].answers[0].text
+                        cardView.rightAnswerLabel.text = cardDeck[index].answers[1].text
+                    }
+                    
+                    self?.deckOfCardViews.append(cardView)
+                    self?.kolodaView.reloadData()
+                }
+                
+            }
         }
     }
     
@@ -91,13 +124,9 @@ class LifeGameViewController: UIViewController, KolodaViewDataSource, KolodaView
         return deckOfCardViews.count
     }
     
-    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView { 
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        questionLabel.text = deckOfCards[index].title
         return deckOfCardViews[index]
-//        if let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView {
-//            cardView.shaderView.backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 1)
-//            cardView.sharedLabel.text = "text"
-//        }
-//        return UIImageView(image: UIImage(named: "BetaChallengeTestImage"), highlightedImage: nil)
     }
     
     func koloda(_ koloda: KolodaView, allowedDirectionsForIndex index: Int) -> [SwipeResultDirection] {
@@ -113,43 +142,84 @@ class LifeGameViewController: UIViewController, KolodaViewDataSource, KolodaView
         
         switch direction {
         case .bottomLeft, .left:
-            card.sharedLabel.text = "LEFT"
+            card.leftAnswerLabel.isHidden = false
+            card.rightAnswerLabel.isHidden = true
         case .right, .bottomRight:
-            card.sharedLabel.text = "RIGHT"
+            card.leftAnswerLabel.isHidden = true
+            card.rightAnswerLabel.isHidden = false
         default: break
         }
     }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-        print("CARD RESET")
-    }
-    
-    func kolodaDidResetCard() {
-        print("CARD RESET")
+        yearOfLife += Int(arc4random_uniform(4)) + 1
+        
+        var answer = RLMAnswer()
+        
+        if deckOfCards[index].answers.count == 2 {
+            switch direction {
+            case .bottomLeft, .left:
+                answer = deckOfCards[index].answers[0]
+            case .right, .bottomRight:
+                answer = deckOfCards[index].answers[1]
+            default: break
+            }
+        }
+        
+        funScore += answer.fun
+        loveScore += answer.love
+        healthScore += answer.health
+        moneyScore += answer.money
+        
     }
     
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
 //        dataSource.reset()
     }
     
-    func koloda(koloda: KolodaView, didSelectCardAt index: Int) {
-        
+    // MARK: - Helper functions
+    
+    private func determinePropIndicatorViewHeight(withScore score: Int) -> CGFloat {
+        return CGFloat(Double(score) * Constant.maximumViewHeight / Constant.maximumScore)
     }
     
+    private func determinePropIndicatorViewFrame(withScore score: Int, forView view: UIView) -> CGRect {
+        return CGRect(
+            x: view.frame.origin.x,
+            y: view.frame.origin.y,
+            width: view.frame.width,
+            height: determinePropIndicatorViewHeight(withScore: score))
+    }
     
-//    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
-//        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-//            switch swipeGesture.direction {
-//            case UISwipeGestureRecognizerDirection.right:
-//                gesture.view?.removeFromSuperview()
-//                print("Swiped right")
-//            case UISwipeGestureRecognizerDirection.left:
-//                gesture.view?.removeFromSuperview()
-//                print("Swiped left")
-//            default: break
-//            }
-//        }
-//    }
+    private func showGameOverScreen(withCauseOfDeath causeOfDeath: CauseOfDeath) {
+        let gameOverStoryboard = UIStoryboard(name: "GameOver", bundle: nil)
+        let gameOverViewController = gameOverStoryboard.instantiateViewController(withIdentifier: "GameOverViewController") as! GameOverViewController
+        
+        gameOverViewController.causeOfDeath = causeOfDeath
+        gameOverViewController.makeRootViewControllerWithTransitionDuration(0.3)
+    }
     
+    // MARK: - Constants
+    
+    private struct Constant {
+        static let maximumViewHeight: Double = 50
+        
+        static let maximumScore: Double = 100
+        static let minimumScore: Double = 0
+        static let defaultScore: Int = 50
+    }
+    
+}
+
+enum CauseOfDeath {
+    case tooMuchLove
+    case tooLessLove
+    case tooMuchMoney
+    case tooLessMoney
+    case tooMuchHealth
+    case tooLessHealth
+    case tooMuchFun
+    case tooLessFun
+    case tooOld
 }
 

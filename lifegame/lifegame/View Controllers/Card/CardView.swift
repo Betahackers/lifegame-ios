@@ -11,6 +11,11 @@ import UIKit
 class CardView: UIView {
     
     @IBOutlet weak var shaderView: UIView!
-    @IBOutlet weak var sharedLabel: UILabel!
+ 
+    @IBOutlet weak var leftAnswerLabel: UILabel!
+    @IBOutlet weak var rightAnswerLabel: UILabel!
+    
+    @IBOutlet weak var characterImageView: UIImageView!
     
 }
+

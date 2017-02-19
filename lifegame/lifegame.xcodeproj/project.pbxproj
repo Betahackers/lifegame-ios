@@ -10,6 +10,12 @@
 		32818CB9CC879519DDF46D82 /* Pods_lifegame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9ACDA69B6EF6D7E0CD47048 /* Pods_lifegame.framework */; };
 		63BD39191E58A6250036F7ED /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BD39171E58A6250036F7ED /* Splash.storyboard */; };
 		63BD391A1E58A6250036F7ED /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD39181E58A6250036F7ED /* SplashViewController.swift */; };
+		EA4890801E59B223005C87B8 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA48907F1E59B223005C87B8 /* GameOver.storyboard */; };
+		EA4890821E59B250005C87B8 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4890811E59B250005C87B8 /* GameOverViewController.swift */; };
+		EA4890841E59B677005C87B8 /* RLMCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4890831E59B677005C87B8 /* RLMCard.swift */; };
+		EA4890861E59B71E005C87B8 /* RLMAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4890851E59B71E005C87B8 /* RLMAnswer.swift */; };
+		EA4890891E59D314005C87B8 /* UIViewController+makeRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4890881E59D314005C87B8 /* UIViewController+makeRoot.swift */; };
+		EA48908B1E59D377005C87B8 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA48908A1E59D377005C87B8 /* AppController.swift */; };
 		EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC31891E586A2900B5CB89 /* AppDelegate.swift */; };
 		EACC318C1E586A2900B5CB89 /* LifegameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */; };
 		EACC318F1E586A2900B5CB89 /* Lifegame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */; };
@@ -17,7 +23,6 @@
 		EACC31941E586A2900B5CB89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC31921E586A2900B5CB89 /* LaunchScreen.storyboard */; };
 		EAF55BFF1E589BA4002F454B /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF55BFE1E589BA4002F454B /* CardView.xib */; };
 		EAF55C011E589C3B002F454B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF55C001E589C3B002F454B /* CardView.swift */; };
-		EAF55C041E589DA2002F454B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF55C031E589DA2002F454B /* Card.swift */; };
 		EAF55C061E58A0B4002F454B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF55C051E58A0B4002F454B /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +32,12 @@
 		63BD39181E58A6250036F7ED /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C213D8EEDE2C968ACECCD65B /* Pods-lifegame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lifegame.release.xcconfig"; path = "Pods/Target Support Files/Pods-lifegame/Pods-lifegame.release.xcconfig"; sourceTree = "<group>"; };
 		E9ACDA69B6EF6D7E0CD47048 /* Pods_lifegame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lifegame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA48907F1E59B223005C87B8 /* GameOver.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GameOver.storyboard; path = "View Controllers/Game Over/GameOver.storyboard"; sourceTree = "<group>"; };
+		EA4890811E59B250005C87B8 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverViewController.swift; path = "View Controllers/Game Over/GameOverViewController.swift"; sourceTree = "<group>"; };
+		EA4890831E59B677005C87B8 /* RLMCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMCard.swift; path = Model/RLMCard.swift; sourceTree = "<group>"; };
+		EA4890851E59B71E005C87B8 /* RLMAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMAnswer.swift; path = Model/RLMAnswer.swift; sourceTree = "<group>"; };
+		EA4890881E59D314005C87B8 /* UIViewController+makeRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+makeRoot.swift"; path = "Extensions/UIViewController+makeRoot.swift"; sourceTree = "<group>"; };
+		EA48908A1E59D377005C87B8 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppController.swift; path = lifegame/Managers/AppController.swift; sourceTree = "<group>"; };
 		EACC31861E586A2900B5CB89 /* Balance It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACC31891E586A2900B5CB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifegameViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +47,6 @@
 		EACC31951E586A2900B5CB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAF55BFE1E589BA4002F454B /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = "View Controllers/Card/CardView.xib"; sourceTree = "<group>"; };
 		EAF55C001E589C3B002F454B /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = "View Controllers/Card/CardView.swift"; sourceTree = "<group>"; };
-		EAF55C031E589DA2002F454B /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = Model/Card.swift; sourceTree = "<group>"; };
 		EAF55C051E58A0B4002F454B /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = lifegame/Managers/DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +89,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EA48907E1E59B1FA005C87B8 /* Game Over */ = {
+			isa = PBXGroup;
+			children = (
+				EA48907F1E59B223005C87B8 /* GameOver.storyboard */,
+				EA4890811E59B250005C87B8 /* GameOverViewController.swift */,
+			);
+			name = "Game Over";
+			sourceTree = "<group>";
+		};
+		EA4890871E59D2C4005C87B8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EA4890881E59D314005C87B8 /* UIViewController+makeRoot.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		EACC317D1E586A2900B5CB89 = {
 			isa = PBXGroup;
 			children = (
@@ -100,9 +127,10 @@
 		EACC31881E586A2900B5CB89 /* lifegame */ = {
 			isa = PBXGroup;
 			children = (
-				EAF55C021E589D87002F454B /* Model */,
 				EACC319B1E586A4300B5CB89 /* Assets */,
+				EA4890871E59D2C4005C87B8 /* Extensions */,
 				EAF55BF91E5899B7002F454B /* App Configuration */,
+				EAF55C021E589D87002F454B /* Model */,
 				EAF55BF81E5894EB002F454B /* Managers */,
 				EAF55BFA1E5899BC002F454B /* View Controllers */,
 			);
@@ -122,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				EAF55C051E58A0B4002F454B /* DataManager.swift */,
+				EA48908A1E59D377005C87B8 /* AppController.swift */,
 			);
 			name = Managers;
 			path = ..;
@@ -139,8 +168,9 @@
 		EAF55BFA1E5899BC002F454B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				63BD39161E58A6250036F7ED /* Splash */,
 				EAF55BFC1E589B69002F454B /* Card */,
+				63BD39161E58A6250036F7ED /* Splash */,
+				EA48907E1E59B1FA005C87B8 /* Game Over */,
 				EAF55BFD1E589B78002F454B /* Lifegame */,
 			);
 			name = "View Controllers";
@@ -158,8 +188,8 @@
 		EAF55BFD1E589B78002F454B /* Lifegame */ = {
 			isa = PBXGroup;
 			children = (
-				EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */,
 				EACC318D1E586A2900B5CB89 /* Lifegame.storyboard */,
+				EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */,
 			);
 			name = Lifegame;
 			sourceTree = "<group>";
@@ -167,7 +197,8 @@
 		EAF55C021E589D87002F454B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EAF55C031E589DA2002F454B /* Card.swift */,
+				EA4890851E59B71E005C87B8 /* RLMAnswer.swift */,
+				EA4890831E59B677005C87B8 /* RLMCard.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -235,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4890801E59B223005C87B8 /* GameOver.storyboard in Resources */,
 				EACC31941E586A2900B5CB89 /* LaunchScreen.storyboard in Resources */,
 				EACC31911E586A2900B5CB89 /* Assets.xcassets in Resources */,
 				EAF55BFF1E589BA4002F454B /* CardView.xib in Resources */,
@@ -302,8 +334,12 @@
 				EAF55C061E58A0B4002F454B /* DataManager.swift in Sources */,
 				EAF55C011E589C3B002F454B /* CardView.swift in Sources */,
 				63BD391A1E58A6250036F7ED /* SplashViewController.swift in Sources */,
+				EA4890891E59D314005C87B8 /* UIViewController+makeRoot.swift in Sources */,
+				EA48908B1E59D377005C87B8 /* AppController.swift in Sources */,
+				EA4890821E59B250005C87B8 /* GameOverViewController.swift in Sources */,
+				EA4890841E59B677005C87B8 /* RLMCard.swift in Sources */,
+				EA4890861E59B71E005C87B8 /* RLMAnswer.swift in Sources */,
 				EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */,
-				EAF55C041E589DA2002F454B /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
