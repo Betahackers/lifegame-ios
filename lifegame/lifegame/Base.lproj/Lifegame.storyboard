@@ -50,7 +50,7 @@
                                     <constraint firstAttribute="height" constant="154" id="hbh-Iu-iFN"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-px-538" customClass="KolodaView" customModule="Koloda">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-px-538" customClass="KolodaView" customModule="Koloda">
                                 <rect key="frame" x="25" y="185" width="325" height="398"/>
                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -163,12 +163,12 @@
                             <constraint firstItem="tFL-gE-q9l" firstAttribute="top" secondItem="ZMK-6d-hJw" secondAttribute="bottom" constant="150" id="2ef-Hv-dvd"/>
                             <constraint firstItem="pjy-XT-HNh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4sf-IU-ISo"/>
                             <constraint firstAttribute="trailing" secondItem="6km-oM-oaq" secondAttribute="trailing" id="82K-Da-Gc4"/>
-                            <constraint firstItem="vw3-px-538" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="87u-AJ-8Dw"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vw3-px-538" secondAttribute="trailing" constant="25" id="9RU-Iv-BVL"/>
                             <constraint firstAttribute="trailing" secondItem="tFL-gE-q9l" secondAttribute="trailing" id="AA1-Cq-WvF"/>
                             <constraint firstItem="jzE-hP-9UW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I1J-cq-74n"/>
                             <constraint firstAttribute="trailing" secondItem="DZj-QM-5y7" secondAttribute="trailing" constant="20" id="TGz-7d-fJc"/>
                             <constraint firstItem="mPb-to-ngX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XAB-i3-9df"/>
+                            <constraint firstItem="jzE-hP-9UW" firstAttribute="top" secondItem="vw3-px-538" secondAttribute="bottom" constant="13" id="bi5-72-3gt"/>
                             <constraint firstItem="6km-oM-oaq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dZW-iL-nqs"/>
                             <constraint firstItem="DZj-QM-5y7" firstAttribute="top" secondItem="ZMK-6d-hJw" secondAttribute="bottom" constant="20" id="dpj-Kb-gki"/>
                             <constraint firstItem="ZMK-6d-hJw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eM6-H7-aua"/>
@@ -185,7 +185,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="kolodaView" destination="vw3-px-538" id="4am-OZ-JS5"/>
+                        <outlet property="kolodaView" destination="vw3-px-538" id="MQb-N8-I81"/>
                         <outlet property="prop1IndicatorView" destination="dnz-Mi-lIY" id="pvI-nc-yJs"/>
                         <outlet property="prop2IndicatorView" destination="nhb-HA-c2b" id="kc1-vX-YgB"/>
                         <outlet property="prop3IndicatorView" destination="z8S-5U-H8p" id="0RF-7A-wFq"/>
