@@ -378,6 +378,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         let gameOverViewController = gameOverStoryboard.instantiateViewController(withIdentifier: "GameOverViewController") as! GameOverViewController
         
         gameOverViewController.causeOfDeath = causeOfDeath
+        gameOverViewController.age = yearOfLife
         gameOverViewController.makeRootViewControllerWithTransitionDuration(0.3)
     }
     

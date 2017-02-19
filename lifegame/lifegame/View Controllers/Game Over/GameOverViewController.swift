@@ -20,6 +20,7 @@ class GameOverViewController: UIViewController {
     
     private let dataManager = DataManager.shared
     
+    var age = 100
     var causeOfDeath: CauseOfDeath = .tooLessFun
     
     // MARK: - Outlets

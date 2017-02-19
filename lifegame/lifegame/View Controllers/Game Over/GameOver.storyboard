@@ -118,6 +118,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ageText" destination="OVE-N2-oV2" id="QgK-lJ-rTK"/>
                         <outlet property="backgroundImageView" destination="u2s-0b-5lQ" id="OaK-ee-9Zr"/>
                         <outlet property="causeImageView" destination="LvW-3R-5rS" id="vWV-yO-poT"/>
                         <outlet property="causeText" destination="iwC-85-r51" id="IC2-I7-X5P"/>
