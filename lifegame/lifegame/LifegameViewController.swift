@@ -31,6 +31,10 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     
     // MARK: - Properties
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     // life properties
     
     var loveScore = Constant.defaultScore {
@@ -78,7 +82,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         }
     }
     
-    var yearOfLife = 21 {
+    var yearOfLife = 15 {
         didSet {
             yearOfLifeLabel.text = "\(yearOfLife)"
         }
@@ -97,9 +101,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     
     override func viewDidLoad() {
         dataManger.loadDeck { [weak self] (cardDeck) in
-            
             self?.deckOfCards = cardDeck
-            
             for index in (0..<cardDeck.count) {
                 if let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView {
                     
@@ -113,8 +115,17 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                     self?.deckOfCardViews.append(cardView)
                     self?.kolodaView.reloadData()
                 }
-                
             }
+        }
+    }
+    
+    func panGestureHandler(_ gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            print("gesture started!")
+        case .ended:
+            print("gesture ended!")
+        default: break
         }
     }
     
@@ -152,7 +163,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-        yearOfLife += Int(arc4random_uniform(4)) + 1
+        yearOfLife += 1
         
         var answer = RLMAnswer()
         
@@ -175,6 +186,11 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
 //        dataSource.reset()
+    }
+    
+    func kolodaDidResetCard(_ koloda: KolodaView) {
+        let card = deckOfCardViews[kolodaView.currentCardIndex]
+        card.shaderView.alpha = 0
     }
     
     // MARK: - Helper functions

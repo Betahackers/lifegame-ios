@@ -21,6 +21,7 @@
 		63BD39381E59E0400036F7ED /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BD392E1E59E0400036F7ED /* Rubik-Medium.ttf */; };
 		63BD39391E59E0400036F7ED /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BD392F1E59E0400036F7ED /* Rubik-MediumItalic.ttf */; };
 		63BD393A1E59E0400036F7ED /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BD39301E59E0400036F7ED /* Rubik-Regular.ttf */; };
+		EA256B2C1E59EF670021B672 /* Realm+CompletionHandlerAfterWriteTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA256B2B1E59EF670021B672 /* Realm+CompletionHandlerAfterWriteTransaction.swift */; };
 		EA4890801E59B223005C87B8 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA48907F1E59B223005C87B8 /* GameOver.storyboard */; };
 		EA4890821E59B250005C87B8 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4890811E59B250005C87B8 /* GameOverViewController.swift */; };
 		EA4890841E59B677005C87B8 /* RLMCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4890831E59B677005C87B8 /* RLMCard.swift */; };
@@ -53,6 +54,7 @@
 		63BD39301E59E0400036F7ED /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		C213D8EEDE2C968ACECCD65B /* Pods-lifegame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lifegame.release.xcconfig"; path = "Pods/Target Support Files/Pods-lifegame/Pods-lifegame.release.xcconfig"; sourceTree = "<group>"; };
 		E9ACDA69B6EF6D7E0CD47048 /* Pods_lifegame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lifegame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA256B2B1E59EF670021B672 /* Realm+CompletionHandlerAfterWriteTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Realm+CompletionHandlerAfterWriteTransaction.swift"; path = "Extensions/Realm+CompletionHandlerAfterWriteTransaction.swift"; sourceTree = "<group>"; };
 		EA48907F1E59B223005C87B8 /* GameOver.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GameOver.storyboard; path = "View Controllers/Game Over/GameOver.storyboard"; sourceTree = "<group>"; };
 		EA4890811E59B250005C87B8 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverViewController.swift; path = "View Controllers/Game Over/GameOverViewController.swift"; sourceTree = "<group>"; };
 		EA4890831E59B677005C87B8 /* RLMCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMCard.swift; path = Model/RLMCard.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				EA4890881E59D314005C87B8 /* UIViewController+makeRoot.swift */,
+				EA256B2B1E59EF670021B672 /* Realm+CompletionHandlerAfterWriteTransaction.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				EACC318C1E586A2900B5CB89 /* LifegameViewController.swift in Sources */,
 				EAF55C061E58A0B4002F454B /* DataManager.swift in Sources */,
 				EAF55C011E589C3B002F454B /* CardView.swift in Sources */,
+				EA256B2C1E59EF670021B672 /* Realm+CompletionHandlerAfterWriteTransaction.swift in Sources */,
 				63BD391A1E58A6250036F7ED /* SplashViewController.swift in Sources */,
 				EA4890891E59D314005C87B8 /* UIViewController+makeRoot.swift in Sources */,
 				EA48908B1E59D377005C87B8 /* AppController.swift in Sources */,

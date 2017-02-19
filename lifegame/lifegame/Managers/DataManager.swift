@@ -16,18 +16,23 @@ class DataManager {
     
     func saveDeck(completionHandler: ((Bool) -> Void)?) {
         Alamofire.request("https://lifegame-api.herokuapp.com/cards").responseJSON { (response) in
-            if let cardsDic = (response.result.value as? [Dictionary<String,AnyObject>]) {
-                for cardDict in cardsDic {
-                    let rlmCard = RLMCard(infoDictionary: cardDict)
-                    
-                    if let realm = try? Realm() {
-                        try? realm.write {
-                            realm.add(rlmCard, update: true)
+            if let realm = try? Realm() {
+                try? realm.write(
+                    transactionBlock: { _ in
+                        if let cardsDic = (response.result.value as? [Dictionary<String,AnyObject>]) {
+                            for cardDict in cardsDic {
+                                let rlmCard = RLMCard(infoDictionary: cardDict)
+                                realm.add(rlmCard, update: true)
+                            }
                         }
-                    }
-                }
+                },
+                    completion: { _ in
+                        if completionHandler != nil {
+                            completionHandler!(true)
+                        }
+                })
             }
-            completionHandler!(true)
+            
         }
     }
     
@@ -42,10 +47,14 @@ class DataManager {
     
     func clearDeck(completionHandler: ((Bool) -> Void)?) {
         if let realm = try? Realm() {
-            realm.deleteAll()
-            if completionHandler != nil {
-                completionHandler!(true)
-            }
+            try? realm.write(
+                transactionBlock: { _ in
+                    realm.deleteAll()
+            }, completion: { _ in
+                if completionHandler != nil {
+                    completionHandler!(true)
+                }
+            })
         } else {
             if completionHandler != nil {
                 completionHandler!(false)
