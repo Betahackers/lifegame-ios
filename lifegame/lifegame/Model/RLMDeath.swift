@@ -11,9 +11,9 @@ import RealmSwift
 
 class RLMDeath: Object {
     
-    var causeOfDeath = CauseOfDeath.tooOld
-    var reason = ""
-    var effect = ""
+    var reason = CauseOfDeath.tooOld
+    dynamic var effect = ""
+    dynamic var cause = ""
     dynamic var identifier = 0
     
     override class func primaryKey() -> String? {
@@ -29,9 +29,33 @@ class RLMDeath: Object {
             self.identifier = identifier
         }
         
-        if let causeOfDeath = card["causeOfDeath"] as? String {
-            if causeOfDeath == "tooOld" {
-                self.causeOfDeath = CauseOfDeath.tooOld
+        if let effect = card["effect"] as? String {
+            self.effect = effect
+        }
+        
+        if let cause = card["cause"] as? String {
+            self.cause = cause
+        }
+        
+        if let reasonServer = card["causeOfDeath"] as? String {
+            if reasonServer == "age_max" {
+                self.reason = CauseOfDeath.tooOld
+            } else if reasonServer == "money_max" {
+                self.reason = CauseOfDeath.tooMuchMoney
+            } else if reasonServer == "money_min" {
+                self.reason = CauseOfDeath.tooLessMoney
+            } else if reasonServer == "fun_max" {
+                self.reason = CauseOfDeath.tooMuchFun
+            } else if reasonServer == "fun_min" {
+                self.reason = CauseOfDeath.tooLessFun
+            } else if reasonServer == "love_max" {
+                self.reason = CauseOfDeath.tooMuchLove
+            } else if reasonServer == "love_min" {
+                self.reason = CauseOfDeath.tooLessLove
+            } else if reasonServer == "health_min" {
+                self.reason = CauseOfDeath.tooMuchHealth
+            } else if reasonServer == "health_max" {
+                self.reason = CauseOfDeath.tooLessHealth
             }
         }
     }
