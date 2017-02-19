@@ -20,8 +20,9 @@ class DataManager {
                 try? realm.write(
                     transactionBlock: { _ in
                         if let cardsDic = (response.result.value as? [Dictionary<String,AnyObject>]) {
-                            for cardDict in cardsDic {
+                            for (index, cardDict) in cardsDic.enumerated() {
                                 let rlmCard = RLMCard(infoDictionary: cardDict)
+                                rlmCard.identifier = index
                                 realm.add(rlmCard, update: true)
                             }
                         }
@@ -38,7 +39,7 @@ class DataManager {
     
     func loadDeck(completionHandler: (([RLMCard]) -> Void)?) {
         if let realm = try? Realm() {
-            let cards = Array(realm.objects(RLMCard.self))
+            let cards = Array(realm.objects(RLMCard.self).sorted(byKeyPath: "identifier", ascending: false))
             if completionHandler != nil {
                 completionHandler!(cards)
             }

@@ -28,9 +28,12 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataManager.saveDeck { [weak self] (success) in
-            print("done")
-            self?.shouldDismissSplash[0] = true
+        dataManager.clearDeck { [weak self] (isCleared) in
+            if isCleared {
+                self?.dataManager.saveDeck { [weak self] (success) in
+                    self?.shouldDismissSplash[0] = true
+                }
+            }
         }
         
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [weak self] _ in

@@ -101,11 +101,12 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     
     override func viewDidLoad() {
         dataManger.loadDeck { [weak self] (cardDeck) in
-            self?.deckOfCards = cardDeck
             for index in (0..<cardDeck.count) {
+                self?.deckOfCards.append(cardDeck[index])
                 if let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView {
                     
                     cardView.characterImageView.image = UIImage(named: cardDeck[index].person)
+                    cardView.characterNameLabel.text = cardDeck[index].person
                     
                     if cardDeck[index].answers.count == 2 {
                         cardView.leftAnswerLabel.text = cardDeck[index].answers[0].text
@@ -119,16 +120,6 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         }
     }
     
-    func panGestureHandler(_ gesture: UIPanGestureRecognizer) {
-        switch gesture.state {
-        case .began:
-            print("gesture started!")
-        case .ended:
-            print("gesture ended!")
-        default: break
-        }
-    }
-    
     // MARK: - Koloda data source implementation
     
     func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
@@ -136,7 +127,6 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        questionLabel.text = deckOfCards[index].title
         return deckOfCardViews[index]
     }
     
@@ -182,6 +172,8 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         healthScore += answer.health
         moneyScore += answer.money
         
+        questionLabel.text = deckOfCards[index+1].title
+        
     }
     
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
@@ -200,11 +192,13 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     }
     
     private func determinePropIndicatorViewFrame(withScore score: Int, forView view: UIView) -> CGRect {
+        let scoreHeight = determinePropIndicatorViewHeight(withScore: score)
         return CGRect(
-            x: view.frame.origin.x,
-            y: view.frame.origin.y,
-            width: view.frame.width,
-            height: determinePropIndicatorViewHeight(withScore: score))
+            x: CGFloat(Constant.maximumViewHeight) - scoreHeight,
+//            x: view.frame.origin.x,
+            y: view.bounds.origin.y,
+            width: view.bounds.width,
+            height: scoreHeight)
     }
     
     private func showGameOverScreen(withCauseOfDeath causeOfDeath: CauseOfDeath) {
