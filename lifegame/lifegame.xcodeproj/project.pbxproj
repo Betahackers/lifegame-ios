@@ -61,7 +61,7 @@
 		EA4890851E59B71E005C87B8 /* RLMAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMAnswer.swift; path = Model/RLMAnswer.swift; sourceTree = "<group>"; };
 		EA4890881E59D314005C87B8 /* UIViewController+makeRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+makeRoot.swift"; path = "Extensions/UIViewController+makeRoot.swift"; sourceTree = "<group>"; };
 		EA48908A1E59D377005C87B8 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppController.swift; path = lifegame/Managers/AppController.swift; sourceTree = "<group>"; };
-		EACC31861E586A2900B5CB89 /* Balance It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balance It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EACC31861E586A2900B5CB89 /* My Random Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Random Story.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACC31891E586A2900B5CB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EACC318B1E586A2900B5CB89 /* LifegameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifegameViewController.swift; sourceTree = "<group>"; };
 		EACC318E1E586A2900B5CB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Lifegame.storyboard; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 		EACC31871E586A2900B5CB89 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EACC31861E586A2900B5CB89 /* Balance It.app */,
+				EACC31861E586A2900B5CB89 /* My Random Story.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,7 +264,7 @@
 			);
 			name = lifegame;
 			productName = lifegame;
-			productReference = EACC31861E586A2900B5CB89 /* Balance It.app */;
+			productReference = EACC31861E586A2900B5CB89 /* My Random Story.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -517,7 +517,7 @@
 				INFOPLIST_FILE = lifegame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.gorillaarm.balanceit;
-				PRODUCT_NAME = "Balance It";
+				PRODUCT_NAME = "My Random Story";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -531,7 +531,7 @@
 				INFOPLIST_FILE = lifegame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.gorillaarm.balanceit;
-				PRODUCT_NAME = "Balance It";
+				PRODUCT_NAME = "My Random Story";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

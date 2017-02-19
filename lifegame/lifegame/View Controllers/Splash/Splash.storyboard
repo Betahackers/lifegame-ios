@@ -8,19 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Rubik-Italic.ttf">
-            <string>Rubik-Italic</string>
-        </array>
-        <array key="Rubik-Regular.ttf">
-            <string>Rubik-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Splash-->
         <scene sceneID="l4L-I5-EMo">
             <objects>
-                <viewController storyboardIdentifier="Splash" title="Splash" id="dqi-EF-rSt" customClass="SplashViewController" customModule="Balance_It" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Splash" title="Splash" id="dqi-EF-rSt" customClass="SplashViewController" customModule="My_Random_Story" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aXd-6U-JYs"/>
                         <viewControllerLayoutGuide type="bottom" id="ZV4-YA-BrP"/>
@@ -29,39 +21,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance It!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdX-tk-OD1">
-                                <rect key="frame" x="146" y="153" width="83" height="20"/>
-                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made by the BetaChallengers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWm-IC-Uoh">
-                                <rect key="frame" x="58" y="623" width="259" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can't have it all" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1w-aW-ghh">
-                                <rect key="frame" x="111" y="181" width="153.5" height="20"/>
-                                <fontDescription key="fontDescription" name="Rubik-Italic" family="Rubik" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_50" translatesAutoresizingMaskIntoConstraints="NO" id="buu-8c-JVq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.23137254901960785" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="M1w-aW-ghh" firstAttribute="centerX" secondItem="WYv-Fp-cmn" secondAttribute="centerX" id="69Y-ha-g3S"/>
-                            <constraint firstItem="cdX-tk-OD1" firstAttribute="centerX" secondItem="WYv-Fp-cmn" secondAttribute="centerX" id="AGX-SB-fje"/>
-                            <constraint firstItem="ZV4-YA-BrP" firstAttribute="top" secondItem="NWm-IC-Uoh" secondAttribute="bottom" constant="20" id="XX8-VF-Nob"/>
-                            <constraint firstItem="M1w-aW-ghh" firstAttribute="top" secondItem="cdX-tk-OD1" secondAttribute="bottom" constant="8" id="crG-Pf-U5b"/>
-                            <constraint firstItem="NWm-IC-Uoh" firstAttribute="centerX" secondItem="WYv-Fp-cmn" secondAttribute="centerX" id="jiq-4d-4vn"/>
-                            <constraint firstItem="cdX-tk-OD1" firstAttribute="centerY" secondItem="WYv-Fp-cmn" secondAttribute="centerY" constant="-170.5" id="reR-nD-XUV"/>
+                            <constraint firstItem="buu-8c-JVq" firstAttribute="leading" secondItem="WYv-Fp-cmn" secondAttribute="leading" id="GVH-ol-acZ"/>
+                            <constraint firstItem="buu-8c-JVq" firstAttribute="top" secondItem="aXd-6U-JYs" secondAttribute="bottom" id="MIF-PB-M1c"/>
+                            <constraint firstItem="ZV4-YA-BrP" firstAttribute="top" secondItem="buu-8c-JVq" secondAttribute="bottom" id="QOG-VB-onH"/>
+                            <constraint firstAttribute="trailing" secondItem="buu-8c-JVq" secondAttribute="trailing" id="WVM-L5-PEn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="splashImageView" destination="buu-8c-JVq" id="9uD-Sf-sRn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Tu-nR-x4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34" y="124"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splash_50" width="1080" height="1080"/>
+    </resources>
 </document>
