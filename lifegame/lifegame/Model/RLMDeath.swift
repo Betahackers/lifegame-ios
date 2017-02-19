@@ -11,7 +11,8 @@ import RealmSwift
 
 class RLMDeath: Object {
     
-    var reason = CauseOfDeath.tooOld
+//    var reason = CauseOfDeath.tooOld
+    dynamic var reason = ""
     dynamic var effect = ""
     dynamic var cause = ""
     dynamic var identifier = 0
@@ -37,26 +38,27 @@ class RLMDeath: Object {
             self.cause = cause
         }
         
-        if let reasonServer = card["causeOfDeath"] as? String {
-            if reasonServer == "age_max" {
-                self.reason = CauseOfDeath.tooOld
-            } else if reasonServer == "money_max" {
-                self.reason = CauseOfDeath.tooMuchMoney
-            } else if reasonServer == "money_min" {
-                self.reason = CauseOfDeath.tooLessMoney
-            } else if reasonServer == "fun_max" {
-                self.reason = CauseOfDeath.tooMuchFun
-            } else if reasonServer == "fun_min" {
-                self.reason = CauseOfDeath.tooLessFun
-            } else if reasonServer == "love_max" {
-                self.reason = CauseOfDeath.tooMuchLove
-            } else if reasonServer == "love_min" {
-                self.reason = CauseOfDeath.tooLessLove
-            } else if reasonServer == "health_min" {
-                self.reason = CauseOfDeath.tooMuchHealth
-            } else if reasonServer == "health_max" {
-                self.reason = CauseOfDeath.tooLessHealth
-            }
+        if let reasonServer = card["reason"] as? String {
+            self.reason = reasonServer
+//            if reasonServer == "age_max" {
+//                self.reason = reasonServer
+//            } else if reasonServer == "money_max" {
+//                self.reason = CauseOfDeath.tooMuchMoney
+//            } else if reasonServer == "money_min" {
+//                self.reason = CauseOfDeath.tooLessMoney
+//            } else if reasonServer == "fun_max" {
+//                self.reason = CauseOfDeath.tooMuchFun
+//            } else if reasonServer == "fun_min" {
+//                self.reason = CauseOfDeath.tooLessFun
+//            } else if reasonServer == "love_max" {
+//                self.reason = CauseOfDeath.tooMuchLove
+//            } else if reasonServer == "love_min" {
+//                self.reason = CauseOfDeath.tooLessLove
+//            } else if reasonServer == "health_min" {
+//                self.reason = CauseOfDeath.tooMuchHealth
+//            } else if reasonServer == "health_max" {
+//                self.reason = CauseOfDeath.tooLessHealth
+//            }
         }
     }
 }

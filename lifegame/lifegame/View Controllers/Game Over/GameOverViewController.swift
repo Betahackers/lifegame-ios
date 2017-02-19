@@ -9,7 +9,7 @@
 import UIKit
 
 class GameOverViewController: UIViewController {
-
+    
     // MARK: - Properties
     
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -19,6 +19,8 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var playAagainButton: UIButton!
     
     private let dataManager = DataManager.shared
+    
+    private var triggeredNewGame = false
     
     var age = 100
     var causeOfDeath: CauseOfDeath = .tooLessFun
@@ -31,7 +33,7 @@ class GameOverViewController: UIViewController {
         self.ageText.text = "\(age)"
         
         var isHeaven = false
-    
+        
         switch causeOfDeath {
         case .tooOld:
             self.causeImageView.image = UIImage (named: "love")!.withRenderingMode(.alwaysTemplate)
@@ -82,28 +84,35 @@ class GameOverViewController: UIViewController {
             self.causeText.textColor = UIColor.white
             self.playAagainButton .setTitleColor(UIColor.white, for: .normal)
         }
+        
+        if let ending = dataManager.loadEnding(forCauseOfDeath: causeOfDeath) {
+            causeText.text = ending.cause + "\n\n" + ending.effect
+        }
     }
     
     
     @IBAction func restartGameActionButton(_ sender: Any) {
-        
-        dataManager.clearDeck { [weak self] (isCleared) in
-            if isCleared {
-                self?.dataManager.saveDeck(completionHandler: { (newDeckIsLoaded) in
-                    
-                    self?.dataManager.saveEndings(completionHandler: { (success) in
-                        if newDeckIsLoaded {
-                            let lifegameStoryboard = UIStoryboard(name: "Lifegame", bundle: nil)
-                            let lifegameViewController = lifegameStoryboard.instantiateViewController(withIdentifier: "LifegameViewController") as! LifegameViewController
-                            
-                            lifegameViewController.makeRootViewControllerWithTransitionDuration(0.3)
-                        }
+        if !triggeredNewGame {
+            triggeredNewGame = true
+            
+            playAagainButton.setTitle("LOADING...", for: .normal)
+            
+            dataManager.clearDeck { [weak self] (isCleared) in
+                if isCleared {
+                    self?.dataManager.saveDeck(completionHandler: { (newDeckIsLoaded) in
+                        
+                        self?.dataManager.saveEndings(completionHandler: { (success) in
+                            if newDeckIsLoaded {
+                                let lifegameStoryboard = UIStoryboard(name: "Lifegame", bundle: nil)
+                                let lifegameViewController = lifegameStoryboard.instantiateViewController(withIdentifier: "LifegameViewController") as! LifegameViewController
+                                
+                                lifegameViewController.makeRootViewControllerWithTransitionDuration(0.3)
+                            }
+                        })
                     })
-                })
+                }
             }
         }
-        
-        
     }
     
 }

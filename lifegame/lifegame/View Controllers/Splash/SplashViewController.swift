@@ -11,6 +11,10 @@ import Alamofire
 
 class SplashViewController: UIViewController {
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     // MARK: - Properties
     
     @IBOutlet weak var splashImageView: UIImageView!
@@ -29,12 +33,15 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        spinner.isHidden = true
+        
         self.splashImageView.alpha = 0;
         
         dataManager.saveDeck { [weak self] (success) in
             
             self?.dataManager.saveEndings(completionHandler: { (success) in
+//                let ending = self?.dataManager.loadEnding(forCauseOfDeatch: .tooLessFun)
                 self?.shouldDismissSplash[0] = true
             })
         }
@@ -58,8 +65,8 @@ class SplashViewController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { [weak self] _ in
             self?.shouldDismissSplash[1] = true
-//            self?.spinner.startAnimating()
-//            self?.spinner.isHidden = false
+            self?.spinner.startAnimating()
+            self?.spinner.isHidden = false
         }
     }
 
