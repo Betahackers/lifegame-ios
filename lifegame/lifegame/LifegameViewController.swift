@@ -347,14 +347,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                     
                     let personServerName = cardDeck[index].person
                     var personLocalName = personServerName
-                    if (personServerName == "parents") {
-                        let random = Int(arc4random_uniform(2))
-                        if (random == 0) {
-                            personLocalName = "mum"
-                        } else {
-                            personLocalName = "dad"
-                        }
-                    }
+                    
                     if (personServerName == "kid") {
                         let random = Int(arc4random_uniform(2))
                         if (random == 0) {
@@ -366,17 +359,17 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                     if (personServerName == "ex") {
                         let random = Int(arc4random_uniform(2))
                         if (random == 0) {
-                            personLocalName = "loverMan"
+                            personLocalName = "exMan"
                         } else {
-                            personLocalName = "loverWoman"
+                            personLocalName = "exWoman"
                         }
                     }
                     if (personServerName == "sex friends") {
                         let random = Int(arc4random_uniform(2))
                         if (random == 0) {
-                            personLocalName = "loverMan"
+                            personLocalName = "sexfriendMan"
                         } else {
-                            personLocalName = "loverWoman"
+                            personLocalName = "sexfriendWoman"
                         }
                     }
                     if (personServerName == "lover") {
@@ -387,21 +380,9 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                             personLocalName = "loverWoman"
                         }
                     }
-                    if (personServerName == "friend") {
-                        personLocalName = "colleague"
-                    }
-                    if (personServerName == "stranger") {
-                        personLocalName = "colleague"
-                    }
-                    if (personServerName == "seller") {
-                        personLocalName = "colleague"
-                    }
-                    if (personServerName == "smoky granny") {
-                        personLocalName = "smoky granny"
-                    }
                     
                     cardView.characterImageView.image = UIImage(named: personLocalName)
-                    cardView.characterNameLabel.text = personLocalName.capitalized
+                    cardView.characterNameLabel.text = personServerName.uppercased()
                     
                     if cardDeck[index].answers.count == 2 {
                         cardView.leftAnswerLabel.text = cardDeck[index].answers[0].text
@@ -453,9 +434,9 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     private struct Constant {
         static let maximumViewHeight: Double = 50
         
-        static let maximumScore: Double = 50
+        static let maximumScore: Double = 100
         static let minimumScore: Double = 0
-        static let defaultScore: Int = 25
+        static let defaultScore: Int = 50
     }
     
 }

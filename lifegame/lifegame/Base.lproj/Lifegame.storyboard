@@ -50,14 +50,14 @@
                                     <constraint firstAttribute="height" constant="154" id="hbh-Iu-iFN"/>
                                 </constraints>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-px-538" customClass="KolodaView" customModule="Koloda">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-px-538" customClass="KolodaView" customModule="Koloda">
                                 <rect key="frame" x="31" y="185" width="313" height="383"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vw3-px-538" secondAttribute="height" multiplier="269:330" id="WlB-Ee-HTF"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzE-hP-9UW">
-                                <rect key="frame" x="43" y="581" width="290" height="70"/>
+                                <rect key="frame" x="43" y="597" width="290" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cok-NC-ylJ">
                                         <rect key="frame" x="-0.5" y="0.0" width="50" height="50"/>
@@ -147,7 +147,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjy-XT-HNh">
-                                <rect key="frame" x="163" y="30" width="50" height="42"/>
+                                <rect key="frame" x="163.5" y="30" width="49.5" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="90" id="C0q-lw-tbl"/>
                                 </constraints>
@@ -156,7 +156,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR LIFE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzh-Ir-QaH">
-                                <rect key="frame" x="151" y="12" width="74" height="18"/>
+                                <rect key="frame" x="150.5" y="12" width="74" height="18"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -173,7 +173,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.23137254901960785" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jzE-hP-9UW" secondAttribute="bottom" constant="16" id="2EP-zo-N4a"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jzE-hP-9UW" secondAttribute="bottom" id="2EP-zo-N4a"/>
                             <constraint firstItem="tFL-gE-q9l" firstAttribute="top" secondItem="ZMK-6d-hJw" secondAttribute="bottom" constant="150" id="2ef-Hv-dvd"/>
                             <constraint firstItem="pjy-XT-HNh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4sf-IU-ISo"/>
                             <constraint firstAttribute="trailing" secondItem="6km-oM-oaq" secondAttribute="trailing" id="82K-Da-Gc4"/>
