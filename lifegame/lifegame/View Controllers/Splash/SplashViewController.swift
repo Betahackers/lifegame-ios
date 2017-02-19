@@ -13,6 +13,8 @@ class SplashViewController: UIViewController {
     
     // MARK: - Properties
     
+    @IBOutlet weak var splashImageView: UIImageView!
+    
     private let dataManager = DataManager.shared
     
     var shouldDismissSplash = [ false, false ] {
@@ -33,7 +35,20 @@ class SplashViewController: UIViewController {
             self?.shouldDismissSplash[0] = true
         }
         
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [weak self] _ in
+        var imgListArray = [UIImage]()
+        for countValue in 0...50
+        {
+            let strImageName : String = "splash_\(countValue).png"
+            let image  = UIImage(named:strImageName)
+            imgListArray.append(image!)
+        }
+        
+        self.splashImageView.animationImages = imgListArray;
+        self.splashImageView.animationDuration = 3.0
+        self.splashImageView.animationRepeatCount = 1
+        self.splashImageView.startAnimating()
+        
+        Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { [weak self] _ in
             self?.shouldDismissSplash[1] = true
 //            self?.spinner.startAnimating()
 //            self?.spinner.isHidden = false
