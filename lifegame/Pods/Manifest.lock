@@ -3,11 +3,11 @@ PODS:
   - Koloda (4.0):
     - pop (~> 1.0)
   - pop (1.0.9)
-  - Realm (2.4.0):
-    - Realm/Headers (= 2.4.0)
-  - Realm/Headers (2.4.0)
-  - RealmSwift (2.4.0):
-    - Realm (= 2.4.0)
+  - Realm (2.3.0):
+    - Realm/Headers (= 2.3.0)
+  - Realm/Headers (2.3.0)
+  - RealmSwift (2.3.0):
+    - Realm (= 2.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
@@ -18,9 +18,9 @@ SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   Koloda: cb171633afc6182a77821b7951e38b2cb272ba7c
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
-  Realm: ee18a466779d058e525e79b3db76a20541f82eb6
-  RealmSwift: 9f77d226585c5d0c6fe02cb432b8230ad826f9cc
+  Realm: 69d7de9aa569a11eed490aaabc8f2109e3985ecf
+  RealmSwift: dc6f99ea55e59490cec69c860f91932b6bf7efb6
 
 PODFILE CHECKSUM: 742b407e0be141b09de20e91705a219c8ad02dc0
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

@@ -39,6 +39,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     
     var loveScore = Constant.defaultScore {
         didSet {
+            print("LOVE: \(loveScore)")
             if Double(loveScore) > Constant.maximumScore {
                 showGameOverScreen(withCauseOfDeath: .tooMuchLove)
             } else if Double(loveScore) < Constant.minimumScore {
@@ -50,6 +51,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     }
     var funScore = Constant.defaultScore {
         didSet {
+            print("FUN: \(funScore)")
             if Double(funScore) > Constant.maximumScore {
                 showGameOverScreen(withCauseOfDeath: .tooMuchFun)
             } else if Double(funScore) < Constant.minimumScore {
@@ -61,6 +63,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     }
     var healthScore = Constant.defaultScore {
         didSet {
+            print("HEALTH: \(healthScore)")
             if Double(healthScore) > Constant.maximumScore {
                 showGameOverScreen(withCauseOfDeath: .tooMuchHealth)
             } else if Double(healthScore) < Constant.minimumScore {
@@ -72,6 +75,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     }
     var moneyScore = Constant.defaultScore {
         didSet {
+            print("MONEY: \(moneyScore)")
             if Double(moneyScore) > Constant.maximumScore {
                 showGameOverScreen(withCauseOfDeath: .tooMuchMoney)
             } else if Double(healthScore) < Constant.minimumScore {
@@ -90,7 +94,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     
     // Managers
     
-    private let dataManger = DataManager.shared
+    private let dataManager = DataManager.shared
     
     // Model
     
@@ -100,7 +104,87 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
-        dataManger.loadDeck { [weak self] (cardDeck) in
+        loadDeck()
+    }
+    
+    // MARK: - Koloda data source implementation
+    
+    func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
+        return deckOfCardViews.count
+    }
+    
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        questionLabel.text = deckOfCards[index].title
+        return deckOfCardViews[index]
+    }
+    
+    func koloda(_ koloda: KolodaView, allowedDirectionsForIndex index: Int) -> [SwipeResultDirection] {
+        return [.bottomLeft, .bottomRight, .left, .right]
+    }
+    
+    // MARK: - Koloda delegate imaplementation
+    
+    func koloda(_ koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, in direction: SwipeResultDirection) {
+        
+        let card = deckOfCardViews[kolodaView.currentCardIndex]
+        card.shaderView.alpha = CGFloat(Double(finishPercentage) / 100)
+        
+        switch direction {
+        case .bottomLeft, .left:
+            card.leftAnswerLabel.isHidden = false
+            card.rightAnswerLabel.isHidden = true
+        case .right, .bottomRight:
+            card.leftAnswerLabel.isHidden = true
+            card.rightAnswerLabel.isHidden = false
+        default: break
+        }
+    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        yearOfLife += 1
+        
+        var answer = RLMAnswer()
+        
+        if deckOfCards[index].answers.count == 2 {
+            switch direction {
+            case .bottomLeft, .left:
+                answer = deckOfCards[index].answers[0]
+            case .right, .bottomRight:
+                answer = deckOfCards[index].answers[1]
+            default: break
+            }
+        }
+        
+        funScore += answer.fun
+        loveScore += answer.love
+        healthScore += answer.health
+        moneyScore += answer.money
+        
+        questionLabel.text = deckOfCards[index+1].title
+        
+    }
+    
+    func kolodaDidRunOutOfCards(koloda: KolodaView) {
+        dataManager.clearDeck { [weak self] (isCleared) in
+            if isCleared {
+                self?.dataManager.saveDeck(completionHandler: { (newDeckIsLoaded) in
+                    if newDeckIsLoaded {
+                        self?.loadDeck()
+                    }
+                })
+            }
+        }
+    }
+    
+    func kolodaDidResetCard(_ koloda: KolodaView) {
+        let card = deckOfCardViews[kolodaView.currentCardIndex]
+        card.shaderView.alpha = 0
+    }
+    
+    // MARK: - Helper functions
+    
+    private func loadDeck() {
+        dataManager.loadDeck { [weak self] (cardDeck) in
             for index in (0..<cardDeck.count) {
                 self?.deckOfCards.append(cardDeck[index])
                 if let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView {
@@ -177,87 +261,20 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         }
     }
     
-    // MARK: - Koloda data source implementation
-    
-    func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
-        return deckOfCardViews.count
-    }
-    
-    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        questionLabel.text = deckOfCards[index].title
-        return deckOfCardViews[index]
-    }
-    
-    func koloda(_ koloda: KolodaView, allowedDirectionsForIndex index: Int) -> [SwipeResultDirection] {
-        return [.bottomLeft, .bottomRight, .left, .right]
-    }
-    
-    // MARK: - Koloda delegate imaplementation
-    
-    func koloda(_ koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, in direction: SwipeResultDirection) {
-        
-        let card = deckOfCardViews[kolodaView.currentCardIndex]
-        card.shaderView.alpha = CGFloat(Double(finishPercentage) / 100)
-        
-        switch direction {
-        case .bottomLeft, .left:
-            card.leftAnswerLabel.isHidden = false
-            card.rightAnswerLabel.isHidden = true
-        case .right, .bottomRight:
-            card.leftAnswerLabel.isHidden = true
-            card.rightAnswerLabel.isHidden = false
-        default: break
-        }
-    }
-    
-    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-        yearOfLife += 1
-        
-        var answer = RLMAnswer()
-        
-        if deckOfCards[index].answers.count == 2 {
-            switch direction {
-            case .bottomLeft, .left:
-                answer = deckOfCards[index].answers[0]
-            case .right, .bottomRight:
-                answer = deckOfCards[index].answers[1]
-            default: break
-            }
-        }
-        
-        funScore += answer.fun
-        loveScore += answer.love
-        healthScore += answer.health
-        moneyScore += answer.money
-        
-        questionLabel.text = deckOfCards[index+1].title
-        
-    }
-    
-    func kolodaDidRunOutOfCards(koloda: KolodaView) {
-//        dataSource.reset()
-    }
-    
-    func kolodaDidResetCard(_ koloda: KolodaView) {
-        let card = deckOfCardViews[kolodaView.currentCardIndex]
-        card.shaderView.alpha = 0
-    }
-    
-    // MARK: - Helper functions
-    
     private func determinePropIndicatorViewHeight(withScore score: Int) -> CGFloat {
         return CGFloat(Double(score) * Constant.maximumViewHeight / Constant.maximumScore)
     }
     
     private func determinePropIndicatorViewFrame(withScore score: Int, forView view: UIView) -> CGRect {
         let scoreHeight = determinePropIndicatorViewHeight(withScore: score)
-        return CGRect(
-            x: CGFloat(Constant.maximumViewHeight) - scoreHeight,
-//            x: view.frame.origin.x,
-            y: view.bounds.origin.y,
+        let newRect = CGRect(
+            x: view.bounds.origin.x,
+            y: CGFloat(Constant.maximumViewHeight) - scoreHeight,
             width: view.bounds.width,
             height: scoreHeight)
+        return newRect
     }
+    
     
     private func showGameOverScreen(withCauseOfDeath causeOfDeath: CauseOfDeath) {
         let gameOverStoryboard = UIStoryboard(name: "GameOver", bundle: nil)
