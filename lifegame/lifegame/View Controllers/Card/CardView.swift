@@ -17,6 +17,5 @@ class CardView: UIView {
     @IBOutlet weak var characterNameLabel: UILabel!
     
     @IBOutlet weak var characterImageView: UIImageView!
-    
 }
 

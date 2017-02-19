@@ -101,14 +101,14 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     
     override func viewDidLoad() {
         dataManger.loadDeck { [weak self] (cardDeck) in
-            self?.deckOfCards = cardDeck
             for index in (0..<cardDeck.count) {
+                self?.deckOfCards.append(cardDeck[index])
                 if let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView {
                     
                     print("\(cardDeck[index].person)")
                     
                     let personServerName = cardDeck[index].person
-                    var personLocalName = ""
+                    var personLocalName = personServerName
                     if (personServerName == "parents") {
                         let random = Int(arc4random_uniform(2))
                         if (random == 0) {
@@ -117,10 +117,53 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                             personLocalName = "dad"
                         }
                     }
+                    if (personServerName == "kid") {
+                        let random = Int(arc4random_uniform(2))
+                        if (random == 0) {
+                            personLocalName = "kidBoy"
+                        } else {
+                            personLocalName = "kidGirl"
+                        }
+                    }
+                    if (personServerName == "ex") {
+                        let random = Int(arc4random_uniform(2))
+                        if (random == 0) {
+                            personLocalName = "loverMan"
+                        } else {
+                            personLocalName = "loverWoman"
+                        }
+                    }
+                    if (personServerName == "sex friends") {
+                        let random = Int(arc4random_uniform(2))
+                        if (random == 0) {
+                            personLocalName = "loverMan"
+                        } else {
+                            personLocalName = "loverWoman"
+                        }
+                    }
+                    if (personServerName == "lover") {
+                        let random = Int(arc4random_uniform(2))
+                        if (random == 0) {
+                            personLocalName = "loverMan"
+                        } else {
+                            personLocalName = "loverWoman"
+                        }
+                    }
+                    if (personServerName == "friend") {
+                        personLocalName = "colleague"
+                    }
+                    if (personServerName == "stranger") {
+                        personLocalName = "colleague"
+                    }
+                    if (personServerName == "seller") {
+                        personLocalName = "colleague"
+                    }
+                    if (personServerName == "smoky granny") {
+                        personLocalName = "smoky granny"
+                    }
                     
                     cardView.characterImageView.image = UIImage(named: personLocalName)
                     cardView.characterNameLabel.text = personLocalName.capitalized
-                    
                     
                     if cardDeck[index].answers.count == 2 {
                         cardView.leftAnswerLabel.text = cardDeck[index].answers[0].text
@@ -131,16 +174,6 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                     self?.kolodaView.reloadData()
                 }
             }
-        }
-    }
-    
-    func panGestureHandler(_ gesture: UIPanGestureRecognizer) {
-        switch gesture.state {
-        case .began:
-            print("gesture started!")
-        case .ended:
-            print("gesture ended!")
-        default: break
         }
     }
     
@@ -197,6 +230,8 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         healthScore += answer.health
         moneyScore += answer.money
         
+        questionLabel.text = deckOfCards[index+1].title
+        
     }
     
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
@@ -215,11 +250,13 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     }
     
     private func determinePropIndicatorViewFrame(withScore score: Int, forView view: UIView) -> CGRect {
+        let scoreHeight = determinePropIndicatorViewHeight(withScore: score)
         return CGRect(
-            x: view.frame.origin.x,
-            y: view.frame.origin.y,
-            width: view.frame.width,
-            height: determinePropIndicatorViewHeight(withScore: score))
+            x: CGFloat(Constant.maximumViewHeight) - scoreHeight,
+//            x: view.frame.origin.x,
+            y: view.bounds.origin.y,
+            width: view.bounds.width,
+            height: scoreHeight)
     }
     
     private func showGameOverScreen(withCauseOfDeath causeOfDeath: CauseOfDeath) {
