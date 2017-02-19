@@ -124,7 +124,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     
     override func viewDidLoad() {
         
-        yearOfLifeLabel.text = "15"
+        yearOfLifeLabel.text = "\(Constant.startingAge)"
         loadDeck()
     }
     
@@ -231,8 +231,11 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         healthScore += answer.health
         moneyScore += answer.money
         
-        questionLabel.text = deckOfCards[index+1].title
+        if index == deckOfCardViews.count - 2 {
+            showGameOverScreen(withCauseOfDeath: .tooOld)
+        }
         
+        questionLabel.text = deckOfCards[index+1].title
     }
     
     func animateIndicator(withScores scores: [Int]) {
@@ -315,15 +318,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     }
     
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
-        dataManager.clearDeck { [weak self] (isCleared) in
-            if isCleared {
-                self?.dataManager.saveDeck(completionHandler: { (newDeckIsLoaded) in
-                    if newDeckIsLoaded {
-                        self?.loadDeck()
-                    }
-                })
-            }
-        }
+        showGameOverScreen(withCauseOfDeath: .tooOld)
     }
     
     func kolodaDidResetCard(_ koloda: KolodaView) {
@@ -437,6 +432,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         static let maximumScore: Double = 100
         static let minimumScore: Double = 0
         static let defaultScore: Int = 50
+        static let startingAge: Int = 15
     }
     
 }

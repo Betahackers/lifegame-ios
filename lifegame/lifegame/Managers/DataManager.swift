@@ -60,6 +60,36 @@ class DataManager {
         }
     }
     
+    func loadEnding(forCauseOfDeath causeOfDeath: CauseOfDeath) -> RLMDeath? {
+        var reason = ""
+        switch causeOfDeath {
+        case .tooOld:
+            reason = "age_max"
+        case .tooLessFun:
+            reason = "fun_min"
+        case .tooMuchFun:
+            reason = "fun_max"
+        case .tooLessHealth:
+            reason = "health_min"
+        case .tooMuchHealth:
+            reason = "health_max"
+        case .tooLessLove:
+            reason = "love_min"
+        case .tooMuchLove:
+            reason = "love_max"
+        case .tooLessMoney:
+            reason = "money_min"
+        case .tooMuchMoney:
+            reason = "money_max"
+        }
+        if let realm = try? Realm() {
+            if let ending = Array(realm.objects(RLMDeath.self).filter("reason == %@", reason)).first {
+                return ending
+            }
+        }
+        return nil
+    }
+    
     func loadDeck(completionHandler: (([RLMCard]) -> Void)?) {
         if let realm = try? Realm() {
             let cards = Array(realm.objects(RLMCard.self).sorted(byKeyPath: "identifier", ascending: false))
