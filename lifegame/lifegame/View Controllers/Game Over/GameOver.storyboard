@@ -29,7 +29,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heaven" translatesAutoresizingMaskIntoConstraints="NO" id="u2s-0b-5lQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3D-it-NPZ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3D-it-NPZ">
                                 <rect key="frame" x="0.0" y="329" width="375" height="338"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-3R-5rS">
@@ -39,14 +39,14 @@
                                             <constraint firstAttribute="width" constant="44" id="Nja-EC-bDO"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="iwC-85-r51">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="iwC-85-r51">
                                         <rect key="frame" x="25" y="75" width="325" height="186"/>
                                         <string key="text">After a 150-second orgasm, your heart gives up and you die on top of your various lovers. After a 150-second orgasm, your heart gives up and you die on top of your various lovers.</string>
                                         <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWH-Ed-03E">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWH-Ed-03E">
                                         <rect key="frame" x="104" y="276" width="167" height="46"/>
                                         <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="28"/>
                                         <state key="normal" title="PLAY AGAIN">
@@ -59,14 +59,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="iwC-85-r51" firstAttribute="top" secondItem="LvW-3R-5rS" secondAttribute="bottom" constant="15" id="15e-HK-fM9"/>
                                     <constraint firstAttribute="height" constant="338" id="5Vo-gl-5pH"/>
                                     <constraint firstItem="LvW-3R-5rS" firstAttribute="centerX" secondItem="c3D-it-NPZ" secondAttribute="centerX" id="AV2-7W-3CJ"/>
                                     <constraint firstItem="iwC-85-r51" firstAttribute="leading" secondItem="c3D-it-NPZ" secondAttribute="leading" constant="25" id="AuX-3B-pgL"/>
-                                    <constraint firstItem="RWH-Ed-03E" firstAttribute="top" secondItem="iwC-85-r51" secondAttribute="bottom" constant="15" id="FSh-aA-P0n"/>
+                                    <constraint firstItem="RWH-Ed-03E" firstAttribute="top" secondItem="iwC-85-r51" secondAttribute="bottom" constant="15" id="K5F-Vg-L1J"/>
                                     <constraint firstAttribute="bottom" secondItem="RWH-Ed-03E" secondAttribute="bottom" constant="16" id="MOm-yW-iHR"/>
                                     <constraint firstAttribute="trailing" secondItem="iwC-85-r51" secondAttribute="trailing" constant="25" id="eva-Uh-lcc"/>
                                     <constraint firstItem="RWH-Ed-03E" firstAttribute="centerX" secondItem="c3D-it-NPZ" secondAttribute="centerX" id="i80-ae-cu1"/>
-                                    <constraint firstItem="iwC-85-r51" firstAttribute="top" secondItem="LvW-3R-5rS" secondAttribute="bottom" constant="15" id="whB-6b-4Pv"/>
                                     <constraint firstItem="LvW-3R-5rS" firstAttribute="top" secondItem="c3D-it-NPZ" secondAttribute="top" constant="16" id="y6R-GK-A4u"/>
                                 </constraints>
                             </view>
