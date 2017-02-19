@@ -105,7 +105,22 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
             for index in (0..<cardDeck.count) {
                 if let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView {
                     
-                    cardView.characterImageView.image = UIImage(named: cardDeck[index].person)
+                    print("\(cardDeck[index].person)")
+                    
+                    let personServerName = cardDeck[index].person
+                    var personLocalName = ""
+                    if (personServerName == "parents") {
+                        let random = Int(arc4random_uniform(2))
+                        if (random == 0) {
+                            personLocalName = "mum"
+                        } else {
+                            personLocalName = "dad"
+                        }
+                    }
+                    
+                    cardView.characterImageView.image = UIImage(named: personLocalName)
+                    cardView.characterNameLabel.text = personLocalName.capitalized
+                    
                     
                     if cardDeck[index].answers.count == 2 {
                         cardView.leftAnswerLabel.text = cardDeck[index].answers[0].text
