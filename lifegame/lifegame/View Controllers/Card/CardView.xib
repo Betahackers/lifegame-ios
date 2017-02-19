@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="325" height="398"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BetaChallengeTestImage" translatesAutoresizingMaskIntoConstraints="NO" id="rU7-dK-MzJ">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="rU7-dK-MzJ">
                     <rect key="frame" x="0.0" y="-1" width="325" height="400"/>
                 </imageView>
                 <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rxy-4v-Ma1">
@@ -79,6 +79,6 @@
         </view>
     </objects>
     <resources>
-        <image name="BetaChallengeTestImage" width="356" height="356"/>
+        <image name="dog" width="1582" height="1582"/>
     </resources>
 </document>
