@@ -29,6 +29,11 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     @IBOutlet weak var prop3IndicatorView: UIView!
     @IBOutlet weak var prop4IndicatorView: UIView!
     
+    @IBOutlet weak var loveChevronImageView: UIImageView!
+    @IBOutlet weak var funChevronImageView: UIImageView!
+    @IBOutlet weak var healthChevronImageView: UIImageView!
+    @IBOutlet weak var moneyChevronImageView: UIImageView!
+    
     // MARK: - Properties
     
     override var prefersStatusBarHidden: Bool {
@@ -130,7 +135,6 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        questionLabel.text = deckOfCards[index].title
         return deckOfCardViews[index]
     }
     
@@ -145,6 +149,50 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         let card = deckOfCardViews[kolodaView.currentCardIndex]
         card.shaderView.alpha = CGFloat(Double(finishPercentage) / 100)
         
+        var answer = RLMAnswer()
+        let index = kolodaView.currentCardIndex
+        if deckOfCards[index].answers.count == 2 {
+            switch direction {
+            case .bottomLeft, .left:
+                answer = deckOfCards[index].answers[0]
+                healthChevronImageView.alpha = 0
+                loveChevronImageView.alpha = 0
+                moneyChevronImageView.alpha = 0
+                funChevronImageView.alpha = 0
+                if answer.love != 0 {
+                    loveChevronImageView.alpha = CGFloat(Double(finishPercentage) / 100)
+                }
+                if answer.fun != 0 {
+                    funChevronImageView.alpha = CGFloat(Double(finishPercentage) / 100)
+                }
+                if answer.health != 0 {
+                    healthChevronImageView.alpha = CGFloat(Double(finishPercentage) / 100)
+                }
+                if answer.money != 0 {
+                    moneyChevronImageView.alpha = CGFloat(Double(finishPercentage) / 100)
+                }
+            case .right, .bottomRight:
+                answer = deckOfCards[index].answers[1]
+                healthChevronImageView.alpha = 0
+                loveChevronImageView.alpha = 0
+                moneyChevronImageView.alpha = 0
+                funChevronImageView.alpha = 0
+                if answer.love != 0 {
+                    loveChevronImageView.alpha = CGFloat(Double(finishPercentage) / 100)
+                }
+                if answer.fun != 0 {
+                    funChevronImageView.alpha = CGFloat(Double(finishPercentage) / 100)
+                }
+                if answer.health != 0 {
+                    healthChevronImageView.alpha = CGFloat(Double(finishPercentage) / 100)
+                }
+                if answer.money != 0 {
+                    moneyChevronImageView.alpha = CGFloat(Double(finishPercentage) / 100)
+                }
+            default: break
+            }
+        }
+        
         switch direction {
         case .bottomLeft, .left:
             card.leftAnswerLabel.isHidden = false
@@ -158,6 +206,11 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         yearOfLife += 1
+        
+        healthChevronImageView.alpha = 0
+        loveChevronImageView.alpha = 0
+        moneyChevronImageView.alpha = 0
+        funChevronImageView.alpha = 0
         
         var answer = RLMAnswer()
         
@@ -185,10 +238,10 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     func animateIndicator(withScores scores: [Int]) {
         if scores[0] < 0 {
             UIView.animate(withDuration: 0.5, animations: {
-                self.prop1IndicatorView.backgroundColor = UIColor.LGBlack
+                self.prop1IndicatorView.backgroundColor = UIColor.LGRed
             }, completion: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.prop1IndicatorView.backgroundColor = UIColor.LGRed
+                    self.prop1IndicatorView.backgroundColor = UIColor.LGBlack
                 })
             })
         }
@@ -197,17 +250,17 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                 self.prop1IndicatorView.backgroundColor = UIColor.LGGreen
             }, completion: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.prop1IndicatorView.backgroundColor = UIColor.LGRed
+                    self.prop1IndicatorView.backgroundColor = UIColor.LGBlack
                 })
             })
         }
         
         if scores[1] < 0 {
             UIView.animate(withDuration: 0.5, animations: {
-                self.prop2IndicatorView.backgroundColor = UIColor.LGBlack
+                self.prop2IndicatorView.backgroundColor = UIColor.LGRed
             }, completion: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.prop2IndicatorView.backgroundColor = UIColor.LGRed
+                    self.prop2IndicatorView.backgroundColor = UIColor.LGBlack
                 })
             })
         }
@@ -216,17 +269,17 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                 self.prop2IndicatorView.backgroundColor = UIColor.LGGreen
             }, completion: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.prop2IndicatorView.backgroundColor = UIColor.LGRed
+                    self.prop2IndicatorView.backgroundColor = UIColor.LGBlack
                 })
             })
         }
         
         if scores[2] < 0 {
             UIView.animate(withDuration: 0.5, animations: {
-                self.prop3IndicatorView.backgroundColor = UIColor.LGBlack
+                self.prop3IndicatorView.backgroundColor = UIColor.LGRed
             }, completion: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.prop3IndicatorView.backgroundColor = UIColor.LGRed
+                    self.prop3IndicatorView.backgroundColor = UIColor.LGBlack
                 })
             })
         }
@@ -235,17 +288,17 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                 self.prop3IndicatorView.backgroundColor = UIColor.LGGreen
             }, completion: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.prop3IndicatorView.backgroundColor = UIColor.LGRed
+                    self.prop3IndicatorView.backgroundColor = UIColor.LGBlack
                 })
             })
         }
         
         if scores[3] < 0 {
             UIView.animate(withDuration: 0.5, animations: {
-                self.prop4IndicatorView.backgroundColor = UIColor.LGBlack
+                self.prop4IndicatorView.backgroundColor = UIColor.LGRed
             }, completion: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.prop4IndicatorView.backgroundColor = UIColor.LGRed
+                    self.prop4IndicatorView.backgroundColor = UIColor.LGBlack
                 })
             })
         }
@@ -254,7 +307,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                 self.prop4IndicatorView.backgroundColor = UIColor.LGGreen
             }, completion: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.prop4IndicatorView.backgroundColor = UIColor.LGRed
+                    self.prop4IndicatorView.backgroundColor = UIColor.LGBlack
                 })
             })
         }
@@ -276,6 +329,10 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     func kolodaDidResetCard(_ koloda: KolodaView) {
         let card = deckOfCardViews[kolodaView.currentCardIndex]
         card.shaderView.alpha = 0
+        healthChevronImageView.alpha = 0
+        loveChevronImageView.alpha = 0
+        moneyChevronImageView.alpha = 0
+        funChevronImageView.alpha = 0
     }
     
     // MARK: - Helper functions
