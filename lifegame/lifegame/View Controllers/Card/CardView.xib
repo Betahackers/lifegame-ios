@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,13 +26,13 @@
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rxy-4v-Ma1">
                     <rect key="frame" x="0.0" y="0.0" width="325" height="398"/>
                     <subviews>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LeftAnswer LeftAnswer LeftAnswer LeftAnswer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rh1-hU-Sk5">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LeftAnswer LeftAnswer LeftAnswer LeftAnswer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Rh1-hU-Sk5">
                             <rect key="frame" x="15" y="15" width="210" height="147"/>
                             <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="31"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RightAnswer RightAnswer RightAnswer RightAnswer" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNn-O5-VY8">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RightAnswer RightAnswer RightAnswer RightAnswer" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="BNn-O5-VY8">
                             <rect key="frame" x="100" y="15" width="210" height="147"/>
                             <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="31"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,9 +41,11 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Rh1-hU-Sk5" secondAttribute="bottom" constant="60" id="728-nc-sIv"/>
                         <constraint firstItem="Rh1-hU-Sk5" firstAttribute="top" secondItem="Rxy-4v-Ma1" secondAttribute="top" constant="15" id="LV1-xw-pdS"/>
                         <constraint firstAttribute="trailing" secondItem="BNn-O5-VY8" secondAttribute="trailing" constant="15" id="QG8-sL-uD9"/>
                         <constraint firstItem="Rh1-hU-Sk5" firstAttribute="leading" secondItem="Rxy-4v-Ma1" secondAttribute="leading" constant="15" id="a8H-fM-EEg"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BNn-O5-VY8" secondAttribute="bottom" constant="60" id="eGY-FV-ZBN"/>
                         <constraint firstItem="BNn-O5-VY8" firstAttribute="leading" secondItem="Rxy-4v-Ma1" secondAttribute="leading" constant="100" id="faw-dH-kYk"/>
                         <constraint firstItem="BNn-O5-VY8" firstAttribute="top" secondItem="Rxy-4v-Ma1" secondAttribute="top" constant="15" id="tqd-iP-t7e"/>
                         <constraint firstAttribute="trailing" secondItem="Rh1-hU-Sk5" secondAttribute="trailing" constant="100" id="w8g-8M-s7f"/>
