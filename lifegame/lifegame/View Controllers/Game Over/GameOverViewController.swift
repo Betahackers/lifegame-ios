@@ -71,6 +71,7 @@ class GameOverViewController: UIViewController {
         
         if isHeaven {
             self.backgroundImageView.image = UIImage (named: "heaven")
+            self.backgroundImageView.tintColor = UIColor.red
             self.causeText.textColor = UIColor.gray
             self.playAagainButton.titleLabel?.textColor = UIColor.gray
         } else {

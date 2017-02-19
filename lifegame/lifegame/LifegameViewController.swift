@@ -118,6 +118,8 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
+        
+        yearOfLifeLabel.text = "15"
         loadDeck()
     }
     

@@ -87,6 +87,7 @@
                         <outlet property="causeImageView" destination="LvW-3R-5rS" id="vWV-yO-poT"/>
                         <outlet property="causeText" destination="iwC-85-r51" id="IC2-I7-X5P"/>
                         <outlet property="playAagainButton" destination="RWH-Ed-03E" id="4cB-4k-U1X"/>
+                        <outlet property="restartGameButton" destination="RWH-Ed-03E" id="ULn-Ke-UNz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQm-LM-WyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
