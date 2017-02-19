@@ -9,8 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Rubik-Black.ttf">
+            <string>Rubik-Black</string>
+        </array>
         <array key="Rubik-Bold.ttf">
             <string>Rubik-Bold</string>
+        </array>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -29,10 +35,32 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heaven" translatesAutoresizingMaskIntoConstraints="NO" id="u2s-0b-5lQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scoreShape" translatesAutoresizingMaskIntoConstraints="NO" id="mQh-1e-Zd2">
+                                <rect key="frame" x="142.5" y="0.0" width="90" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="79y-Cx-2I5"/>
+                                    <constraint firstAttribute="height" constant="77" id="ZlB-mH-cra"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVE-N2-oV2">
+                                <rect key="frame" x="163" y="30" width="49.5" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="90" id="IEk-Ur-7RU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Black" family="Rubik" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEAD AT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYR-R6-br3">
+                                <rect key="frame" x="157" y="12" width="61" height="18"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3D-it-NPZ">
                                 <rect key="frame" x="0.0" y="329" width="375" height="338"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-3R-5rS">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-3R-5rS">
                                         <rect key="frame" x="165" y="16" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="IZk-Si-Vch"/>
@@ -74,10 +102,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="c3D-it-NPZ" firstAttribute="leading" secondItem="30Q-rw-IKx" secondAttribute="leading" id="65I-OL-mH9"/>
+                            <constraint firstItem="mQh-1e-Zd2" firstAttribute="top" secondItem="30Q-rw-IKx" secondAttribute="top" id="8PU-Im-bhY"/>
                             <constraint firstItem="Oq8-9y-XLc" firstAttribute="top" secondItem="u2s-0b-5lQ" secondAttribute="bottom" id="GJ8-hZ-fba"/>
                             <constraint firstAttribute="trailing" secondItem="c3D-it-NPZ" secondAttribute="trailing" id="LBf-8n-KSX"/>
+                            <constraint firstItem="OVE-N2-oV2" firstAttribute="centerX" secondItem="30Q-rw-IKx" secondAttribute="centerX" id="PAo-NG-Znq"/>
+                            <constraint firstItem="eYR-R6-br3" firstAttribute="top" secondItem="30Q-rw-IKx" secondAttribute="top" constant="12" id="PEb-x9-q0w"/>
                             <constraint firstItem="u2s-0b-5lQ" firstAttribute="top" secondItem="30Q-rw-IKx" secondAttribute="top" id="XOz-3Z-TgS"/>
+                            <constraint firstItem="OVE-N2-oV2" firstAttribute="top" secondItem="eYR-R6-br3" secondAttribute="bottom" id="ZF8-M8-gwR"/>
+                            <constraint firstItem="mQh-1e-Zd2" firstAttribute="centerX" secondItem="30Q-rw-IKx" secondAttribute="centerX" id="aOf-XX-imf"/>
                             <constraint firstItem="Oq8-9y-XLc" firstAttribute="top" secondItem="c3D-it-NPZ" secondAttribute="bottom" id="fDw-H7-7zG"/>
+                            <constraint firstItem="eYR-R6-br3" firstAttribute="centerX" secondItem="30Q-rw-IKx" secondAttribute="centerX" id="hIw-3K-ZJm"/>
+                            <constraint firstItem="OVE-N2-oV2" firstAttribute="top" secondItem="eYR-R6-br3" secondAttribute="bottom" id="lO6-a9-V4d"/>
                             <constraint firstAttribute="trailing" secondItem="u2s-0b-5lQ" secondAttribute="trailing" id="u5A-nj-nOn"/>
                             <constraint firstItem="u2s-0b-5lQ" firstAttribute="leading" secondItem="30Q-rw-IKx" secondAttribute="leading" id="vTv-SI-2fq"/>
                         </constraints>
@@ -87,7 +122,6 @@
                         <outlet property="causeImageView" destination="LvW-3R-5rS" id="vWV-yO-poT"/>
                         <outlet property="causeText" destination="iwC-85-r51" id="IC2-I7-X5P"/>
                         <outlet property="playAagainButton" destination="RWH-Ed-03E" id="4cB-4k-U1X"/>
-                        <outlet property="restartGameButton" destination="RWH-Ed-03E" id="ULn-Ke-UNz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQm-LM-WyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,5 +132,6 @@
     <resources>
         <image name="heaven" width="16" height="16"/>
         <image name="love" width="35" height="32"/>
+        <image name="scoreShape" width="90" height="77"/>
     </resources>
 </document>
