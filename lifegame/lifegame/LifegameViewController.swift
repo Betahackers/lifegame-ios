@@ -55,6 +55,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     var funScore = Constant.defaultScore {
         didSet {
             print("FUN: \(funScore)")
+            
             if Double(funScore) > Constant.maximumScore {
                 showGameOverScreen(withCauseOfDeath: .tooMuchFun)
             } else {
@@ -85,12 +86,13 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     var moneyScore = Constant.defaultScore {
         didSet {
             print("MONEY: \(moneyScore)")
+            print("--------------------")
             if Double(moneyScore) > Constant.maximumScore {
                 showGameOverScreen(withCauseOfDeath: .tooMuchMoney)
             } else {
                 prop4IndicatorView.frame = determinePropIndicatorViewFrame(withScore: moneyScore, forView: prop4IndicatorView)
             }
-            if Double(healthScore) < Constant.minimumScore {
+            if Double(moneyScore) < Constant.minimumScore {
                 showGameOverScreen(withCauseOfDeath: .tooLessMoney)
             } else {
                 prop4IndicatorView.frame = determinePropIndicatorViewFrame(withScore: moneyScore, forView: prop4IndicatorView)
@@ -167,6 +169,8 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
             }
         }
         
+        
+        
         funScore += answer.fun
         loveScore += answer.love
         healthScore += answer.health
@@ -174,6 +178,12 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         
         questionLabel.text = deckOfCards[index+1].title
         
+    }
+    
+    func animateIndicator(withScores scores: [Int]) {
+//        UIView.animate(withDuration: 0.5, animations: {
+//            <#code#>
+//        }, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
     }
     
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
