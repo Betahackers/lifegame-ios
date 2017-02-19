@@ -37,6 +37,29 @@ class DataManager {
         }
     }
     
+    func saveEndings(completionHandler: ((Bool) -> Void)?) {
+        Alamofire.request("https://lifegame-api.herokuapp.com/endings").responseJSON { (response) in
+            if let realm = try? Realm() {
+                try? realm.write(
+                    transactionBlock: { _ in
+                        if let endingArray = (response.result.value as? [Dictionary<String,AnyObject>]) {
+                            for (index, endingDict) in endingArray.enumerated() {
+                                let rlmEnding = RLMDeath(infoDictionary: endingDict)
+                                rlmEnding.identifier = index
+                                realm.add(rlmEnding, update: true)
+                            }
+                        }
+                },
+                    completion: { _ in
+                        if completionHandler != nil {
+                            completionHandler!(true)
+                        }
+                })
+            }
+            
+        }
+    }
+    
     func loadDeck(completionHandler: (([RLMCard]) -> Void)?) {
         if let realm = try? Realm() {
             let cards = Array(realm.objects(RLMCard.self).sorted(byKeyPath: "identifier", ascending: false))

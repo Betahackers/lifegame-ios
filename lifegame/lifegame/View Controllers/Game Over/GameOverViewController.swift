@@ -28,7 +28,7 @@ class GameOverViewController: UIViewController {
     // MARK: - Actions
     override func viewDidLoad() {
         
-        self.ageText.text = "15"
+        self.ageText.text = "\(age)"
         
         var isHeaven = false
     

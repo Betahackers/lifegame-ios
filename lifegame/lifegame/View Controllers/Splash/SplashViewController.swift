@@ -33,8 +33,10 @@ class SplashViewController: UIViewController {
         self.splashImageView.alpha = 0;
         
         dataManager.saveDeck { [weak self] (success) in
-            print("done")
-            self?.shouldDismissSplash[0] = true
+            
+            self?.dataManager.saveEndings(completionHandler: { (success) in
+                self?.shouldDismissSplash[0] = true
+            })
         }
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { [weak self] _ in

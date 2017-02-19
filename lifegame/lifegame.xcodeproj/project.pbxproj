@@ -21,6 +21,7 @@
 		63BD39381E59E0400036F7ED /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BD392E1E59E0400036F7ED /* Rubik-Medium.ttf */; };
 		63BD39391E59E0400036F7ED /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BD392F1E59E0400036F7ED /* Rubik-MediumItalic.ttf */; };
 		63BD393A1E59E0400036F7ED /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BD39301E59E0400036F7ED /* Rubik-Regular.ttf */; };
+		63F675381E5A3B1800F983EE /* RLMDeath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F675371E5A3B1800F983EE /* RLMDeath.swift */; };
 		EA256B2C1E59EF670021B672 /* Realm+CompletionHandlerAfterWriteTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA256B2B1E59EF670021B672 /* Realm+CompletionHandlerAfterWriteTransaction.swift */; };
 		EA2D05431E5A2A75004DF14B /* UIColor+LifegameColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D05421E5A2A75004DF14B /* UIColor+LifegameColorSet.swift */; };
 		EA4890801E59B223005C87B8 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA48907F1E59B223005C87B8 /* GameOver.storyboard */; };
@@ -53,6 +54,7 @@
 		63BD392E1E59E0400036F7ED /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		63BD392F1E59E0400036F7ED /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		63BD39301E59E0400036F7ED /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		63F675371E5A3B1800F983EE /* RLMDeath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMDeath.swift; path = Model/RLMDeath.swift; sourceTree = "<group>"; };
 		C213D8EEDE2C968ACECCD65B /* Pods-lifegame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lifegame.release.xcconfig"; path = "Pods/Target Support Files/Pods-lifegame/Pods-lifegame.release.xcconfig"; sourceTree = "<group>"; };
 		E9ACDA69B6EF6D7E0CD47048 /* Pods_lifegame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lifegame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA256B2B1E59EF670021B672 /* Realm+CompletionHandlerAfterWriteTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Realm+CompletionHandlerAfterWriteTransaction.swift"; path = "Extensions/Realm+CompletionHandlerAfterWriteTransaction.swift"; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				EA4890851E59B71E005C87B8 /* RLMAnswer.swift */,
 				EA4890831E59B677005C87B8 /* RLMCard.swift */,
+				63F675371E5A3B1800F983EE /* RLMDeath.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				EA4890821E59B250005C87B8 /* GameOverViewController.swift in Sources */,
 				EA4890841E59B677005C87B8 /* RLMCard.swift in Sources */,
 				EA4890861E59B71E005C87B8 /* RLMAnswer.swift in Sources */,
+				63F675381E5A3B1800F983EE /* RLMDeath.swift in Sources */,
 				EA2D05431E5A2A75004DF14B /* UIColor+LifegameColorSet.swift in Sources */,
 				EACC318A1E586A2900B5CB89 /* AppDelegate.swift in Sources */,
 			);
