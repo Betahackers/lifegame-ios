@@ -171,7 +171,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
             }
         }
         
-        
+        animateIndicator(withScores: [answer.love, answer.fun, answer.health, answer.money])
         
         funScore += answer.fun
         loveScore += answer.love
@@ -185,9 +185,77 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     func animateIndicator(withScores scores: [Int]) {
         if scores[0] < 0 {
             UIView.animate(withDuration: 0.5, animations: {
-                <#code#>
-            }, completion: { (<#Bool#>) in
-                <#code#>
+                self.prop1IndicatorView.backgroundColor = UIColor.LGBlack
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.prop1IndicatorView.backgroundColor = UIColor.LGRed
+                })
+            })
+        }
+        if scores[0] > 0 {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.prop1IndicatorView.backgroundColor = UIColor.LGGreen
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.prop1IndicatorView.backgroundColor = UIColor.LGRed
+                })
+            })
+        }
+        
+        if scores[1] < 0 {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.prop2IndicatorView.backgroundColor = UIColor.LGBlack
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.prop2IndicatorView.backgroundColor = UIColor.LGRed
+                })
+            })
+        }
+        if scores[1] > 0 {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.prop2IndicatorView.backgroundColor = UIColor.LGGreen
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.prop2IndicatorView.backgroundColor = UIColor.LGRed
+                })
+            })
+        }
+        
+        if scores[2] < 0 {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.prop3IndicatorView.backgroundColor = UIColor.LGBlack
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.prop3IndicatorView.backgroundColor = UIColor.LGRed
+                })
+            })
+        }
+        if scores[2] > 0 {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.prop3IndicatorView.backgroundColor = UIColor.LGGreen
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.prop3IndicatorView.backgroundColor = UIColor.LGRed
+                })
+            })
+        }
+        
+        if scores[3] < 0 {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.prop4IndicatorView.backgroundColor = UIColor.LGBlack
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.prop4IndicatorView.backgroundColor = UIColor.LGRed
+                })
+            })
+        }
+        if scores[3] > 0 {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.prop4IndicatorView.backgroundColor = UIColor.LGGreen
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.prop4IndicatorView.backgroundColor = UIColor.LGRed
+                })
             })
         }
         
