@@ -181,9 +181,14 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     }
     
     func animateIndicator(withScores scores: [Int]) {
-//        UIView.animate(withDuration: 0.5, animations: {
-//            <#code#>
-//        }, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+        if scores[0] < 0 {
+            UIView.animate(withDuration: 0.5, animations: {
+                <#code#>
+            }, completion: { (<#Bool#>) in
+                <#code#>
+            })
+        }
+        
     }
     
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
