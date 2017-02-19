@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Screen Shot 2017-02-19 at 16.56.13.png",
+      "filename" : "parentMCopy.png",
       "scale" : "1x"
     },
     {
@@ -11,6 +11,7 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "parentMCopy@3x.png",
       "scale" : "3x"
     }
   ],
