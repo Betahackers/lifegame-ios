@@ -412,6 +412,15 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                     self?.kolodaView.reloadData()
                 }
             }
+            
+            self?.healthChevronImageView.alpha = 0
+            self?.loveChevronImageView.alpha = 0
+            self?.moneyChevronImageView.alpha = 0
+            self?.funChevronImageView.alpha = 0
+            
+            if let firstQuestion = cardDeck.first {
+                self?.questionLabel.text = firstQuestion.title
+            }
         }
     }
     
