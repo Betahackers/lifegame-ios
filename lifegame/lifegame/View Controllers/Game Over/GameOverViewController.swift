@@ -21,13 +21,14 @@ class GameOverViewController: UIViewController {
     private let dataManager = DataManager.shared
     
     var causeOfDeath: CauseOfDeath = .tooLessFun
+    var age = 15
     
     // MARK: - Outlets
     
     // MARK: - Actions
     override func viewDidLoad() {
         
-        self.ageText.text = "15"
+        self.ageText.text = "\(age)"
         
         var isHeaven = false
     

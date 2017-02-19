@@ -51,14 +51,13 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-px-538" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="25" y="185" width="325" height="398"/>
-                                <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="31" y="185" width="313" height="383"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vw3-px-538" secondAttribute="height" multiplier="269:330" id="WlB-Ee-HTF"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzE-hP-9UW">
-                                <rect key="frame" x="43" y="596" width="290" height="55"/>
+                                <rect key="frame" x="43" y="581" width="290" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cok-NC-ylJ">
                                         <rect key="frame" x="-0.5" y="0.0" width="50" height="50"/>
@@ -67,7 +66,7 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dnz-Mi-lIY">
                                                 <rect key="frame" x="0.0" y="25" width="50" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="0.28235294117647058" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.027450980392156862" green="0.12941176470588234" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loveAlpha" translatesAutoresizingMaskIntoConstraints="NO" id="HGl-JD-AEN">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -83,7 +82,7 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-HA-c2b">
                                                 <rect key="frame" x="0.0" y="25" width="50" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="0.28235294119999998" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.027450980390000001" green="0.12941176469999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="funAlpha" translatesAutoresizingMaskIntoConstraints="NO" id="T9g-Bm-K8t">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -99,7 +98,7 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XJ-G7-2Mz">
                                                 <rect key="frame" x="0.0" y="25" width="50" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="0.28235294119999998" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.027450980390000001" green="0.12941176469999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moneyAlpha" translatesAutoresizingMaskIntoConstraints="NO" id="HqT-17-ecQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -115,7 +114,7 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z8S-5U-H8p">
                                                 <rect key="frame" x="0.0" y="25" width="50" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="0.28235294119999998" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.027450980390000001" green="0.12941176469999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="healthAlpha" translatesAutoresizingMaskIntoConstraints="NO" id="yes-rN-qon">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -124,15 +123,31 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron" translatesAutoresizingMaskIntoConstraints="NO" id="gar-fk-6kr">
+                                        <rect key="frame" x="19" y="53" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron" translatesAutoresizingMaskIntoConstraints="NO" id="Ao6-YP-con">
+                                        <rect key="frame" x="99" y="53" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron" translatesAutoresizingMaskIntoConstraints="NO" id="rtr-Qg-76W">
+                                        <rect key="frame" x="179" y="53" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron" translatesAutoresizingMaskIntoConstraints="NO" id="AHg-uD-c5n">
+                                        <rect key="frame" x="259" y="53" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="Jhk-lO-I6L"/>
+                                    <constraint firstAttribute="height" constant="70" id="Jhk-lO-I6L"/>
                                     <constraint firstAttribute="width" constant="290" id="OrQ-Rg-jXO"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjy-XT-HNh">
-                                <rect key="frame" x="163" y="30" width="49.5" height="41"/>
+                                <rect key="frame" x="163" y="30" width="50" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="90" id="C0q-lw-tbl"/>
                                 </constraints>
@@ -141,7 +156,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR LIFE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzh-Ir-QaH">
-                                <rect key="frame" x="150.5" y="12" width="74" height="18"/>
+                                <rect key="frame" x="151" y="12" width="74" height="18"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -184,7 +199,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="funChevronImageView" destination="Ao6-YP-con" id="Wxo-CE-VyJ"/>
+                        <outlet property="healthChevronImageView" destination="rtr-Qg-76W" id="7KD-Rv-6D8"/>
                         <outlet property="kolodaView" destination="vw3-px-538" id="MQb-N8-I81"/>
+                        <outlet property="loveChevronImageView" destination="gar-fk-6kr" id="6D8-PJ-kl2"/>
+                        <outlet property="moneyChevronImageView" destination="AHg-uD-c5n" id="a4P-JT-Zp4"/>
                         <outlet property="prop1IndicatorView" destination="dnz-Mi-lIY" id="pvI-nc-yJs"/>
                         <outlet property="prop2IndicatorView" destination="nhb-HA-c2b" id="kc1-vX-YgB"/>
                         <outlet property="prop3IndicatorView" destination="z8S-5U-H8p" id="0RF-7A-wFq"/>
@@ -199,6 +218,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron" width="12" height="6"/>
         <image name="cloud" width="79" height="45"/>
         <image name="cloud2" width="123" height="45"/>
         <image name="funAlpha" width="44" height="44"/>
