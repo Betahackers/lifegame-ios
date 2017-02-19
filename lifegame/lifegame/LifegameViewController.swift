@@ -42,7 +42,10 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
             print("LOVE: \(loveScore)")
             if Double(loveScore) > Constant.maximumScore {
                 showGameOverScreen(withCauseOfDeath: .tooMuchLove)
-            } else if Double(loveScore) < Constant.minimumScore {
+            } else {
+                prop1IndicatorView.frame = determinePropIndicatorViewFrame(withScore: loveScore, forView: prop1IndicatorView)
+            }
+            if Double(loveScore) < Constant.minimumScore {
                 showGameOverScreen(withCauseOfDeath: .tooLessLove)
             } else {
                 prop1IndicatorView.frame = determinePropIndicatorViewFrame(withScore: loveScore, forView: prop1IndicatorView)
@@ -54,7 +57,10 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
             print("FUN: \(funScore)")
             if Double(funScore) > Constant.maximumScore {
                 showGameOverScreen(withCauseOfDeath: .tooMuchFun)
-            } else if Double(funScore) < Constant.minimumScore {
+            } else {
+                prop2IndicatorView.frame = determinePropIndicatorViewFrame(withScore: funScore, forView: prop2IndicatorView)
+            }
+            if Double(funScore) < Constant.minimumScore {
                 showGameOverScreen(withCauseOfDeath: .tooLessFun)
             } else {
                 prop2IndicatorView.frame = determinePropIndicatorViewFrame(withScore: funScore, forView: prop2IndicatorView)
@@ -66,7 +72,10 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
             print("HEALTH: \(healthScore)")
             if Double(healthScore) > Constant.maximumScore {
                 showGameOverScreen(withCauseOfDeath: .tooMuchHealth)
-            } else if Double(healthScore) < Constant.minimumScore {
+            } else {
+                prop3IndicatorView.frame = determinePropIndicatorViewFrame(withScore: healthScore, forView: prop3IndicatorView)
+            }
+            if Double(healthScore) < Constant.minimumScore {
                 showGameOverScreen(withCauseOfDeath: .tooLessHealth)
             } else {
                 prop3IndicatorView.frame = determinePropIndicatorViewFrame(withScore: healthScore, forView: prop3IndicatorView)
@@ -78,7 +87,10 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
             print("MONEY: \(moneyScore)")
             if Double(moneyScore) > Constant.maximumScore {
                 showGameOverScreen(withCauseOfDeath: .tooMuchMoney)
-            } else if Double(healthScore) < Constant.minimumScore {
+            } else {
+                prop4IndicatorView.frame = determinePropIndicatorViewFrame(withScore: moneyScore, forView: prop4IndicatorView)
+            }
+            if Double(healthScore) < Constant.minimumScore {
                 showGameOverScreen(withCauseOfDeath: .tooLessMoney)
             } else {
                 prop4IndicatorView.frame = determinePropIndicatorViewFrame(withScore: moneyScore, forView: prop4IndicatorView)

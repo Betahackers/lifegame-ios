@@ -129,12 +129,14 @@ static BOOL isValidRealmURL(NSURL *url) {
         if (!isValidRealmURL(url)) {
             @throw RLMException(@"The provided URL (%@) was not a valid Realm URL.", [url absoluteString]);
         }
-        auto bindHandler = [=](auto&,
-                               const SyncConfig& config,
-                               const std::shared_ptr<SyncSession>& session) {
-            [user _bindSessionWithConfig:config
-                                 session:session
-                              completion:[RLMSyncManager sharedManager].sessionCompletionNotifier];
+        auto bindHandler = [=](const std::string& path,
+                              const SyncConfig& config,
+                              const std::shared_ptr<SyncSession>& session) {
+            [user _bindSessionWithPath:path
+                                config:config
+                               session:session
+                            completion:[RLMSyncManager sharedManager].sessionCompletionNotifier
+                          isStandalone:NO];
         };
         if (!errorHandler) {
             errorHandler = [=](std::shared_ptr<SyncSession> errored_session,
