@@ -90,12 +90,15 @@ class GameOverViewController: UIViewController {
         dataManager.clearDeck { [weak self] (isCleared) in
             if isCleared {
                 self?.dataManager.saveDeck(completionHandler: { (newDeckIsLoaded) in
-                    if newDeckIsLoaded {
-                        let lifegameStoryboard = UIStoryboard(name: "Lifegame", bundle: nil)
-                        let lifegameViewController = lifegameStoryboard.instantiateViewController(withIdentifier: "LifegameViewController") as! LifegameViewController
-                        
-                        lifegameViewController.makeRootViewControllerWithTransitionDuration(0.3)
-                    }
+                    
+                    self?.dataManager.saveEndings(completionHandler: { (success) in
+                        if newDeckIsLoaded {
+                            let lifegameStoryboard = UIStoryboard(name: "Lifegame", bundle: nil)
+                            let lifegameViewController = lifegameStoryboard.instantiateViewController(withIdentifier: "LifegameViewController") as! LifegameViewController
+                            
+                            lifegameViewController.makeRootViewControllerWithTransitionDuration(0.3)
+                        }
+                    })
                 })
             }
         }
