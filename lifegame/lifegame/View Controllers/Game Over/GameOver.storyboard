@@ -8,11 +8,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Bold.ttf">
+            <string>Rubik-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Game Over View Controller-->
         <scene sceneID="VLN-3b-t4U">
             <objects>
-                <viewController storyboardIdentifier="GameOverViewController" id="AHr-v1-LS2" customClass="GameOverViewController" customModule="Balance_It" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameOverViewController" id="AHr-v1-LS2" customClass="GameOverViewController" customModule="My_Random_Story" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mqO-RJ-cRO"/>
                         <viewControllerLayoutGuide type="bottom" id="Oq8-9y-XLc"/>
@@ -21,27 +26,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wj-gc-oUC">
-                                <rect key="frame" x="162" y="617" width="50" height="30"/>
-                                <state key="normal" title="Restart"/>
-                                <connections>
-                                    <action selector="restartGameActionButton:" destination="AHr-v1-LS2" eventType="touchUpInside" id="KJ7-Se-mEz"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heaven" translatesAutoresizingMaskIntoConstraints="NO" id="u2s-0b-5lQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3D-it-NPZ">
+                                <rect key="frame" x="0.0" y="329" width="375" height="338"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love" translatesAutoresizingMaskIntoConstraints="NO" id="LvW-3R-5rS">
+                                        <rect key="frame" x="165" y="16" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="IZk-Si-Vch"/>
+                                            <constraint firstAttribute="width" constant="44" id="Nja-EC-bDO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="iwC-85-r51">
+                                        <rect key="frame" x="25" y="75" width="325" height="186"/>
+                                        <string key="text">After a 150-second orgasm, your heart gives up and you die on top of your various lovers. After a 150-second orgasm, your heart gives up and you die on top of your various lovers.</string>
+                                        <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWH-Ed-03E">
+                                        <rect key="frame" x="104" y="276" width="167" height="46"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="28"/>
+                                        <state key="normal" title="PLAY AGAIN">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="restartGameActionButton:" destination="AHr-v1-LS2" eventType="touchUpInside" id="F2M-Fp-Dtr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="338" id="5Vo-gl-5pH"/>
+                                    <constraint firstItem="LvW-3R-5rS" firstAttribute="centerX" secondItem="c3D-it-NPZ" secondAttribute="centerX" id="AV2-7W-3CJ"/>
+                                    <constraint firstItem="iwC-85-r51" firstAttribute="leading" secondItem="c3D-it-NPZ" secondAttribute="leading" constant="25" id="AuX-3B-pgL"/>
+                                    <constraint firstItem="RWH-Ed-03E" firstAttribute="top" secondItem="iwC-85-r51" secondAttribute="bottom" constant="15" id="FSh-aA-P0n"/>
+                                    <constraint firstAttribute="bottom" secondItem="RWH-Ed-03E" secondAttribute="bottom" constant="16" id="MOm-yW-iHR"/>
+                                    <constraint firstAttribute="trailing" secondItem="iwC-85-r51" secondAttribute="trailing" constant="25" id="eva-Uh-lcc"/>
+                                    <constraint firstItem="RWH-Ed-03E" firstAttribute="centerX" secondItem="c3D-it-NPZ" secondAttribute="centerX" id="i80-ae-cu1"/>
+                                    <constraint firstItem="iwC-85-r51" firstAttribute="top" secondItem="LvW-3R-5rS" secondAttribute="bottom" constant="15" id="whB-6b-4Pv"/>
+                                    <constraint firstItem="LvW-3R-5rS" firstAttribute="top" secondItem="c3D-it-NPZ" secondAttribute="top" constant="16" id="y6R-GK-A4u"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="3wj-gc-oUC" secondAttribute="bottom" constant="20" symbolic="YES" id="MEw-l1-VhG"/>
-                            <constraint firstItem="3wj-gc-oUC" firstAttribute="centerX" secondItem="30Q-rw-IKx" secondAttribute="centerX" id="POH-5D-GF2"/>
+                            <constraint firstItem="c3D-it-NPZ" firstAttribute="leading" secondItem="30Q-rw-IKx" secondAttribute="leading" id="65I-OL-mH9"/>
+                            <constraint firstItem="Oq8-9y-XLc" firstAttribute="top" secondItem="u2s-0b-5lQ" secondAttribute="bottom" id="GJ8-hZ-fba"/>
+                            <constraint firstAttribute="trailing" secondItem="c3D-it-NPZ" secondAttribute="trailing" id="LBf-8n-KSX"/>
+                            <constraint firstItem="u2s-0b-5lQ" firstAttribute="top" secondItem="30Q-rw-IKx" secondAttribute="top" id="XOz-3Z-TgS"/>
+                            <constraint firstItem="Oq8-9y-XLc" firstAttribute="top" secondItem="c3D-it-NPZ" secondAttribute="bottom" id="fDw-H7-7zG"/>
+                            <constraint firstAttribute="trailing" secondItem="u2s-0b-5lQ" secondAttribute="trailing" id="u5A-nj-nOn"/>
+                            <constraint firstItem="u2s-0b-5lQ" firstAttribute="leading" secondItem="30Q-rw-IKx" secondAttribute="leading" id="vTv-SI-2fq"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="restartGameButton" destination="3wj-gc-oUC" id="knR-1I-ZIY"/>
+                        <outlet property="backgroundImageView" destination="u2s-0b-5lQ" id="OaK-ee-9Zr"/>
+                        <outlet property="causeImageView" destination="LvW-3R-5rS" id="vWV-yO-poT"/>
+                        <outlet property="causeText" destination="iwC-85-r51" id="IC2-I7-X5P"/>
+                        <outlet property="playAagainButton" destination="RWH-Ed-03E" id="4cB-4k-U1X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQm-LM-WyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79" y="146"/>
+            <point key="canvasLocation" x="-79.200000000000003" y="145.27736131934034"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heaven" width="16" height="16"/>
+        <image name="love" width="35" height="32"/>
+    </resources>
 </document>

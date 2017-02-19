@@ -272,9 +272,9 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     private struct Constant {
         static let maximumViewHeight: Double = 50
         
-        static let maximumScore: Double = 100
+        static let maximumScore: Double = 50
         static let minimumScore: Double = 0
-        static let defaultScore: Int = 50
+        static let defaultScore: Int = 25
     }
     
 }
