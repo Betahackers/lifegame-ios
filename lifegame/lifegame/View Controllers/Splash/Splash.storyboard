@@ -12,7 +12,7 @@
         <!--Splash-->
         <scene sceneID="l4L-I5-EMo">
             <objects>
-                <viewController storyboardIdentifier="Splash" title="Splash" id="dqi-EF-rSt" customClass="SplashViewController" customModule="Balance_It" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Splash" title="Splash" id="dqi-EF-rSt" customClass="SplashViewController" customModule="My_Random_Story" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aXd-6U-JYs"/>
                         <viewControllerLayoutGuide type="bottom" id="ZV4-YA-BrP"/>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_0" translatesAutoresizingMaskIntoConstraints="NO" id="buu-8c-JVq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_50" translatesAutoresizingMaskIntoConstraints="NO" id="buu-8c-JVq">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
@@ -43,6 +43,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splash_0" width="1080" height="1080"/>
+        <image name="splash_50" width="1080" height="1080"/>
     </resources>
 </document>

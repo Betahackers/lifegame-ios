@@ -30,23 +30,29 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.splashImageView.alpha = 0;
+        
         dataManager.saveDeck { [weak self] (success) in
             print("done")
             self?.shouldDismissSplash[0] = true
         }
         
-        var imgListArray = [UIImage]()
-        for countValue in 0...50
-        {
-            let strImageName : String = "splash_\(countValue).png"
-            let image  = UIImage(named:strImageName)
-            imgListArray.append(image!)
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { [weak self] _ in
+            
+            var imgListArray = [UIImage]()
+            for countValue in 0...50
+            {
+                let strImageName : String = "splash_\(countValue).png"
+                let image  = UIImage(named:strImageName)
+                imgListArray.append(image!)
+            }
+            
+            self?.splashImageView.animationImages = imgListArray;
+            self?.splashImageView.animationDuration = 3.0
+            self?.splashImageView.animationRepeatCount = 1
+            self?.splashImageView.startAnimating()
+            self?.splashImageView.alpha = 1;
         }
-        
-        self.splashImageView.animationImages = imgListArray;
-        self.splashImageView.animationDuration = 3.0
-        self.splashImageView.animationRepeatCount = 1
-        self.splashImageView.startAnimating()
         
         Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { [weak self] _ in
             self?.shouldDismissSplash[1] = true
