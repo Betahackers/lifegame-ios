@@ -204,6 +204,10 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         }
     }
     
+    func kolodaSwipeThresholdRatioMargin(_ koloda: KolodaView) -> CGFloat? {
+        return 0.2
+    }
+    
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         yearOfLife += 1
         
@@ -238,7 +242,22 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         questionLabel.text = deckOfCards[index+1].title
     }
     
-    func animateIndicator(withScores scores: [Int]) {
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        showGameOverScreen(withCauseOfDeath: .tooOld)
+    }
+    
+    func kolodaDidResetCard(_ koloda: KolodaView) {
+        let card = deckOfCardViews[kolodaView.currentCardIndex]
+        card.shaderView.alpha = 0
+        healthChevronImageView.alpha = 0
+        loveChevronImageView.alpha = 0
+        moneyChevronImageView.alpha = 0
+        funChevronImageView.alpha = 0
+    }
+    
+    // MARK: - Helper functions
+    
+    private func animateIndicator(withScores scores: [Int]) {
         if scores[0] < 0 {
             UIView.animate(withDuration: 0.5, animations: {
                 self.prop1IndicatorView.backgroundColor = UIColor.LGRed
@@ -316,21 +335,6 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         }
         
     }
-    
-    func kolodaDidRunOutOfCards(koloda: KolodaView) {
-        showGameOverScreen(withCauseOfDeath: .tooOld)
-    }
-    
-    func kolodaDidResetCard(_ koloda: KolodaView) {
-        let card = deckOfCardViews[kolodaView.currentCardIndex]
-        card.shaderView.alpha = 0
-        healthChevronImageView.alpha = 0
-        loveChevronImageView.alpha = 0
-        moneyChevronImageView.alpha = 0
-        funChevronImageView.alpha = 0
-    }
-    
-    // MARK: - Helper functions
     
     private func loadDeck() {
         dataManager.loadDeck { [weak self] (cardDeck) in
@@ -433,6 +437,8 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         static let minimumScore: Double = 0
         static let defaultScore: Int = 50
         static let startingAge: Int = 15
+        
+        static let thresholdToSwipe: CGFloat = 0.9
     }
     
 }
