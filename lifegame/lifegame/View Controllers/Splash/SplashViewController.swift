@@ -57,13 +57,13 @@ class SplashViewController: UIViewController {
             }
             
             self?.splashImageView.animationImages = imgListArray;
-            self?.splashImageView.animationDuration = 3.0
+            self?.splashImageView.animationDuration = 2.0
             self?.splashImageView.animationRepeatCount = 1
             self?.splashImageView.startAnimating()
             self?.splashImageView.alpha = 1;
         }
         
-        Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { [weak self] _ in
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] _ in
             self?.shouldDismissSplash[1] = true
             self?.spinner.startAnimating()
             self?.spinner.isHidden = false
