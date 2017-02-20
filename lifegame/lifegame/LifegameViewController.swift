@@ -339,7 +339,7 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
                 if let cardView = Bundle.main.loadNibNamed("CardView", owner: self, options: nil)?.first as? CardView {
                     
                     print("\(cardDeck[index].person)")
-                    
+                
                     let personServerName = cardDeck[index].person
                     var personLocalName = personServerName
                     
