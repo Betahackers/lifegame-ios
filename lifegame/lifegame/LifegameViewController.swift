@@ -8,6 +8,7 @@
 
 import UIKit
 import Koloda
+import Crashlytics // If using Answers with Crashlytics
 
 class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaViewDelegate {
 
@@ -105,6 +106,8 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         }
     }
     
+    var totalScore = 0 
+    
     var yearOfLife = 15 {
         didSet {
             yearOfLifeLabel.text = "\(yearOfLife)"
@@ -123,6 +126,8 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
+        
+        Answers.logLevelStart(nil, customAttributes: nil)
         
         yearOfLifeLabel.text = "\(Constant.startingAge)"
         loadDeck()
@@ -229,6 +234,8 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         }
         
         animateIndicator(withScores: [answer.love, answer.fun, answer.health, answer.money])
+        
+        totalScore = funScore + loveScore + healthScore + moneyScore
         
         funScore += answer.fun
         loveScore += answer.love
@@ -420,6 +427,12 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
     
     
     private func showGameOverScreen(withCauseOfDeath causeOfDeath: CauseOfDeath) {
+        
+        Answers.logLevelEnd(nil, score: yearOfLife as NSNumber?, success: true,
+                            customAttributes:nil)
+        
+        Answers.logCustomEvent(withName: "totalScore", customAttributes: ["totalScore": totalScore])
+        
         let gameOverStoryboard = UIStoryboard(name: "GameOver", bundle: nil)
         let gameOverViewController = gameOverStoryboard.instantiateViewController(withIdentifier: "GameOverViewController") as! GameOverViewController
         
