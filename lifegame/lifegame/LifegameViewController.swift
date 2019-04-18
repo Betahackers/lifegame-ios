@@ -453,7 +453,6 @@ class LifegameViewController: UIViewController, KolodaViewDataSource, KolodaView
         
         static let thresholdToSwipe: CGFloat = 0.9
     }
-    
 }
 
 enum CauseOfDeath {
